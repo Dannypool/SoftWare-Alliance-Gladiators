@@ -1,2 +1,2 @@
-class GestionFe.Collections.Municipios extends Backbone.Collection
+class GestionFe.Collections.Estados extends Backbone.Collection
   url: 'api/states'

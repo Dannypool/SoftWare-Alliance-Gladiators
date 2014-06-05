@@ -17,10 +17,14 @@ class GestionFe.Routers.Gestions extends Backbone.Router
     @municipios.fetch success: ->
       that.municipiosFetched.resolve()
     @estadosFetched = new $.Deferred()
-    @estados = new GestionFe.Collections.Municipios
+    @estados = new GestionFe.Collections.Estados
     @estados.fetch success: ->
       that.estadosFetched.resolve()
-
+    @localidadesFetched = new $.Deferred()
+    @localidades = new GestionFe.Collections.Localidades
+    @localidades.fetch success: ->
+      that.localidadesFetched.resolve()
+    console.log @localidades
     @contenido = $('#panelContenido')
 
   #@Registro_Aspirante.$el.hide()
@@ -28,11 +32,15 @@ class GestionFe.Routers.Gestions extends Backbone.Router
 
   show_registroAspirante: ->
     that = this
+    view = new GestionFe.Views.RegistroAspirantes()
     @municipiosFetched.done ->
-      view = new GestionFe.Views.RegistroAspirantes()
-      view.allEstados(that.estados)
       view.allMunicipios(that.municipios)
-      that.contenido.html(view.$el)
+    @estadosFetched.done ->
+      view.allEstados(that.estados)
+    @localidadesFetched.done ->
+      view.allLocalidades(that.localidades)
+
+    that.contenido.html(view.$el)
 
 
 

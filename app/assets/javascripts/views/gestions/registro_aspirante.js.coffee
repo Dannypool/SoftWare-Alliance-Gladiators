@@ -44,6 +44,16 @@ class GestionFe.Views.RegistroAspirantes extends Backbone.View
     estados.each(@renderEstados, this)
 
   renderEstados: (estado)->
-    estadoAux = estado.get("municipio")
+    estadoAux = estado.get("estado")
     html = "<option> #{estadoAux}</option>"
+    console.log(html)
     this.$('#select-estado').append(html)
+
+  allLocalidades: (localidades) ->
+    this.$('#select-localidad').empty()
+    localidades.each(@renderLocalidades, this)
+
+  renderLocalidades: (localidad)->
+    localidadAux = localidad.get("localidad")
+    html = "<option> #{localidadAux}</option>"
+    this.$('#select-localidad').append(html)

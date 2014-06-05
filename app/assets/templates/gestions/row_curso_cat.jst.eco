@@ -1,0 +1,31 @@
+<td>
+    <input type="text" required class="form-control input-sm nombre-curso"  value="<%= @curso.nombre %>" disabled>
+</td>
+<td>
+    <input type="text" required class="form-control input-sm descripcion-curso"  value="<%= @curso.descripcion %>" disabled>
+</td>
+<td>
+    <% if @curso.habilitado: %>
+        <p class="habilitado-curso">Habilitado</p>
+    <% else: %>
+        <p class="habilitado-curso">Deshabilitado</p>
+    <% end %>
+</td>
+<td>
+  <button class="btn btn-info btn-xs btn-editar">
+    <span class="glyphicon glyphicon-edit">
+        </span>
+  </button>
+  <button href="#" class="btn btn-success btn-xs btn-guardar">
+    <span class="glyphicon glyphicon-ok">
+        </span>
+  </button>
+  <button href="#" class="btn btn-default btn-xs btn-cancelar">
+      <span class="glyphicon glyphicon-remove">
+          </span>
+  </button>
+  <button href="#" class="btn btn-default btn-xs btn-habilitar">
+    <span class="glyphicon glyphicon-remove">
+        </span>
+  </button>
+</td>

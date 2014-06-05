@@ -1,0 +1,496 @@
+<div class="col-md-9 ">
+	<div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+            	<kbd>Nuevo Aspirante</kbd>
+            </div>
+             <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#datos-generales" data-toggle="tab">Datos Generales</a></li>
+                    <li><a href="#cuestionario" data-toggle="tab">Cuestionario</a></li>
+                    <li><a href="#documentos" data-toggle="tab">Documentos</a></li> 
+                </ul>
+            <div class="panel-body">
+            	<!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="datos-generales">
+                    	<div class="row">
+						    <div class="col-xs-12">
+								<form role="form">
+									<div class="row">
+									    <div class="col-xs-12 col-sm-4 col-md-4">
+                                            <div class="form-group">
+                                                <label  for="nombre_aic">Nombre(s):</label>
+                                                <input type="text" name="nombre_aic" id="nombre_aic" class="form-control" placeholder="Nombre(s)" tabindex="3">
+                                            </div>
+                                        </div>
+										<div class="col-xs-12 col-sm-4 col-md-4">
+											<div class="form-group">
+												 <label  for="apellidoP">Apellido Paterno:</label>
+						                        <input type="text" name="apell_pat_aic" id="apell_pat_aic" class="form-control" placeholder="Apellido Paterno" tabindex="1">
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-4 col-md-4">
+											<div class="form-group">
+												<label  for="apell_mat_aic" >Apellido Materno:</label>
+												<input type="text" name="apell_mat_aic" id="apell_mat_aic" class="form-control" placeholder="Apellido Materno" tabindex="2">
+											</div>
+										</div>
+									</div>	
+									
+									<div class="row">
+										<div class="col-xs-12 col-sm-3 col-md-3">
+											<div class="form-group">
+												<label for="fec_nac_aic">Fecha de nacimiento:</label>
+												<div class='input-group date' id='fecha_nac_aic'>
+                                                    <input type='text' class="form-control" />
+                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                                                    </span>
+                                                </div>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-2 col-md-2">
+											<div class="form-group">
+												<label for="sexo_aic">Sexo:</label>
+												<select name="sexo_aic" id="sexo_aic" class="form-control" tabindex="5">
+													<option>Masculino</option>
+													<option>Femenino</option>
+												</select>
+												
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-2 col-md-2">
+											<div class="form-group">
+												<label for="tipo_sangre_aic">Tipo de sangre:</label>
+												<select name="tipo_sangre_aic" id="tipo_sangre_aic" class="form-control" tabindex="6">
+													<option>O-</option>
+													<option>O+</option>
+													<option>A-</option>
+													<option>A+</option>
+													<option>B-</option>
+													<option>B+</option>
+													<option>AB-</option>
+													<option>AB+</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-5 col-md-5">
+											<div class="form-group">
+												<label  for="curp_aic">CURP:</label>
+												<input type="text" name="curp_aic" id="curp_aic" class="form-control" placeholder="CURP" tabindex="7">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 col-sm-5 col-md-5">
+											<div class="form-group">
+												<label  for="rf_aic">R.F.C:</label>
+												<input type="text" name="rf_aic" id="rf_aic" class="form-control" placeholder="R.F.C" tabindex="8">
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-5 col-md-5">
+											<div class="form-group">
+												<label  for="lugar_nac_aic">Lugar de Nacimiento:</label>
+												<input type="text" name="lugar_nac_aic" id="lugar_nac_aic" class="form-control" placeholder="Lugar de Nacimiento" tabindex="9">
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-2 col-md-2">
+											<div class="form-group">
+												<label>
+												    <input type="radio" name="rural" id="rural" value="0" checked>
+												    Rural
+												</label>
+												<label>
+												    <input type="radio" name="rural" id="urbano" value="1">
+												    Urbano
+												</label>
+											</div>
+										</div>
+									</div>
+									<h4>Domicilio Particular</h4>
+									<div class="row">
+									    <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="text" name="calle" id="calle" class="form-control" placeholder="Calle" tabindex="11"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <input type="text" name="numero" id="numero" class="form-control" placeholder="Número" tabindex="12"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <input type="text" name="colonia" id="colonia" class="form-control" placeholder="Colonia" tabindex="13"/>
+                                            </div>
+                                        </div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 col-sm-4 col-md-3">
+                                            <label for="num-calzado">Estado</label>
+                                            <select class="form-control col-xs-12 col-sm-3 col-md-3" id="select-estado">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div>
+										<div class="col-xs-12 col-sm-3 col-md-3">
+										    <label for="num-calzado">Municipio</label>
+											<select class="form-control col-xs-12 col-sm-3 col-md-3" id="select-municipio">
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+												<option>5</option>
+											</select>
+										</div>
+										<div class="col-xs-12 col-sm-3 col-md-3">
+                                            <label for="num-calzado">Localidad</label>
+                                            <select class="form-control col-xs-12 col-sm-3 col-md-3" id="select-localidad">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 col-sm-3 col-md-3">
+											<div class="form-group">
+												<label for="num-calzado">Número de calzado:</label>
+												<select name="num-calzado" id="num-calzado" class="form-control" tabindex="15">
+													<option>22</option>
+													<option>23</option>
+													<option>24</option>
+													<option>25</option>
+													<option>26</option>
+													<option>27</option>
+													<option>28</option>
+													<option>29</option>
+													<option>30</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-2 col-md-2">
+											<div class="form-group">
+												<label for="talla-playera">Talla de playera:</label>
+												<select name="talla-playera" id="talla-playera" class="form-control" tabindex="16">
+													<option>Chica</option>
+													<option>Mediana</option>
+													<option>Grande</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-2 col-md-2">
+											<div class="form-group">
+												<label for="talla-pants">Talla de pants:</label>
+												<select name="talla-pants" id="talla-pants" class="form-control" tabindex="17">
+													<option>Chica</option>
+													<option>Mediana</option>
+													<option>Grande</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-5 col-md-5">
+											<div class="form-group">
+												<label  for="tel">Telefono:</label>
+												<input type="text" name="tel" id="tel" class="form-control" placeholder="Telefono" tabindex="18"/>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+                                        <div class="col-md-12">
+                                            <label>Ultimo Grado de estuidio</label>
+                                            <div class="form-group">
+                                                <div class="radio-inline">
+                                                  <label>
+                                                    <input type="radio" class="nivelEducacion"  name="nivelEstudio" id="nivelSecundaria" value="option1" checked>
+                                                    Secundaria
+                                                  </label>
+                                                </div>
+                                                <div class="radio-inline">
+                                                  <label>
+                                                    <input type="radio" class="nivelEducacion" name="nivelEstudio" id="nivelMediaSuperior" value="option1" >
+                                                    Media Superior
+                                                  </label>
+                                                </div>
+                                                <div class="radio-inline">
+                                                  <label>
+                                                    <input type="radio" class="nivelEducacion" name="nivelEstudio" id="nivelSuperior" value="option1" >
+                                                    Superior
+                                                  </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group" >
+                                                <label for="tipo-secundaria">Tipo de secundaria:</label>
+                                                <select name="tipo-secundaria" id="tipo-secundaria" class="form-control" tabindex="17">
+                                                    <option value="S1">Diurna</option>
+                                                    <option value="S2">Telesecundaria</option>
+                                                    <option value="S3">Tecnica</option>
+                                                    <option value="S4">Para trabajadores</option>
+                                                    <option value="S5">Comunitaria</option>
+                                                    <option value="S6">Particular</option>
+                                                    <option value="S7">Otros</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label  for="nombreEscuela">Cual:</label>
+                                                <input type="text" name="nombreEscuela" id="nombreEscuela" class="form-control" tabindex="18"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="mediaSuperior">
+                                        <div class="col-md-6">
+                                            <div class="form-group" >
+                                                <label for="tipo-secundaria">Media Superior:</label>
+                                                <select name="tipo-secundaria" id="tipo-secundaria" class="form-control" tabindex="17">
+                                                    <option value="S1">Diurna</option>
+                                                    <option value="S2">Telesecundaria</option>
+                                                    <option value="S3">Tecnica</option>
+                                                    <option value="S4">Para trabajadores</option>
+                                                    <option value="S5">Comunitaria</option>
+                                                    <option value="S6">Particular</option>
+                                                    <option value="S7">Otros</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label  for="nombreEscuela">Cual:</label>
+                                                <input type="text" name="nombreEscuela" id="nombreEscuela" class="form-control" tabindex="18"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="superior">
+                                        <div class="col-md-6">
+                                            <div class="form-group" >
+                                                <label for="tipo-secundaria">Superior:</label>
+                                                <select name="tipo-secundaria" id="tipo-secundaria" class="form-control" tabindex="17">
+                                                    <option value="S1">Diurna</option>
+                                                    <option value="S2">Telesecundaria</option>
+                                                    <option value="S3">Tecnica</option>
+                                                    <option value="S4">Para trabajadores</option>
+                                                    <option value="S5">Comunitaria</option>
+                                                    <option value="S6">Particular</option>
+                                                    <option value="S7">Otros</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label  for="nombreEscuela">Cual:</label>
+                                                <input type="text" name="nombreEscuela" id="nombreEscuela" class="form-control" tabindex="18"/>
+                                            </div>
+                                        </div>
+                                    </div>
+								</form>
+							</div>
+						</div>	
+                    </div>
+                    <div class="tab-pane fade" id="cuestionario">
+						<div class="row">
+							<div class="col-xs-12">
+								<form role="form">
+									<div class="row">
+										<div class="col-xs-12 col-sm-8 col-md-8">
+											<div class="form-group">
+												<label for="pregunta-1" >1.- ¿El clima o viaje afectan tu salud?</label>
+												<select  name="pregunta-1" id="pregunta-1" class="form-control input-sm">
+													<option>Si</option>
+													<option>No</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 col-sm-8 col-md-8">
+											<div class="form-group">
+												<label for="pregunta-2" >2.- ¿Padeces Alguna enfermedad que te impida realizar actividades en comunidad?</label>
+												<select  name="pregunta-2" id="pregunta-2" class="form-control input-sm">
+													<option>Si</option>
+													<option>No</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 col-sm-6 col-md-6">
+											<div class="form-group">
+												<label for="pregunta-3" >3.- ¿Has colaborado con alguna institución educativa?</label>
+												<select  name="pregunta-3" id="pregunta-3" class="form-control input-sm">
+													<option>Si</option>
+													<option>No</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-6 col-md-6">
+											<div class="form-group">
+												<label for="pregunta-3-1" >¿Que funciones desempeñabas?</label>
+												<input type="text" name="pregunta-3-1" id="pregunta-3-1" class="form-control input-sm"/>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 col-sm-8 col-md-8">
+											<div class="form-group">
+												<label for="pregunta-4">4.- ¿Cuentas con familiares que dependan economicamente de ti ?</label>
+												<select  name="pregunta-4" id="pregunta-4" class="form-control input-sm">
+													<option>Si</option>
+													<option>No</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-4 col-md-4">
+											<div class="form-group">
+												<label for="pregunta-4-1">¿Cuantos ?</label>
+												<select name="pregunta-4-1" id="pregunta-4-1" class="form-control input-sm">
+													<option>1</option>
+													<option>2</option>
+													<option>3</option>
+													<option>4</option>
+													<option>5</option>
+													<option>6</option>
+													<option>7</option>
+													<option>8</option>
+													<option>9</option>
+													<option>10</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 col-sm-4 col-md-4">
+											<div class="form-group">
+												<label for="pregunta-5" >5.-¿Cuando terminaste tus estudios?</label>
+												<input type="date" name="pregunta-5" id="pregunta-5" class="form-control input-sm"/>	
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 col-sm-4 col-md-4">
+											<div class="form-group">
+												<label for="pregunta-6" >6.- ¿Debes alguna materia?</label>
+												<select  name="pregunta-6" id="pregunta-6" class="form-control input-sm">
+													<option>Si</option>
+													<option>No</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-8 col-md-8">
+											<div class="form-group">
+												<label for="pregunta-6-1" >¿Cual?</label>
+												<input type="text" name="pregunta-6-1" id="pregunta-6-1" class="form-control input-sm"/>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 col-sm-4 col-md-4">
+											<div class="form-group">
+												<label for="pregunta-7">7.-¿Como te enteraste del conafe?</label>
+												<select  name="pregunta-7" id="pregunta-7" class="form-control input-sm">
+													<option value='1'>Oficina del conafe</option>
+													<option value='2'>Radio</option>
+													<option value='3'>T.V.</option>
+													<option value='4'>Carteles</option>
+													<option value='5'>Visita a escuela</option>
+													<option value='6' >Otro</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-8 col-md-8">
+											<div class="form-group">
+												<label for="pregunta-7-1">Especifica</label>
+												<input type="text" name="pregunta-7-1" id="pregunta-7-1" class="form-control input-sm"/>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 col-sm-4 col-md-4">
+											<div class="form-group">
+												<label for="pregunta-8" >8.-¿Hablas una lengua indigena? </label>
+												<select  name="pregunta-8" id="pregunta-8" class="form-control input-sm">
+													<option value='1'>Si</option>
+													<option value='2'>No</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-8 col-md-8">
+											<div class="form-group">
+												<label for="pregunta-8-1">¿Cuál?</label>
+												<input type="text" name="pregunta-8-1" id="pregunta-8-1" class="form-control input-sm"/>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 col-sm-8 col-md-8">
+											<div class="form-group">
+												<label for="pregunta-9" >9.-¿En que nivel educativo te gustaria prestar tu servicio social</label>
+												<select  name="pregunta-9" id="pregunta-9" class="form-control input-sm">
+													<option>Educación inicial</option>
+													<option>Preescolar</option>
+													<option>Primaria</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 col-sm-5 col-md-5">
+											<div class="form-group">
+												<label for="pregunta-10" >10.-¿Has colaborado anteriormente en el conafe? </label>
+												<select  name="pregunta-10" id="pregunta-10" class="form-control input-sm">
+													<option value='1'>Si</option>
+													<option value='2'>No</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-7 col-md-7">
+											<div class="form-group">
+												<label for="pregunta-10-1">¿En que comunidad, región o escuela colaboraste?</label>
+												<input type="text" name="pregunta-10-1" id="pregunta-10-1" class="form-control input-sm"/>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+                    </div>
+                    <div class="tab-pane fade" id="documentos">
+                    	<div class="row">
+                    		<div class="col-xs-12">
+                    			<form role="form">
+                    				<div class="row">
+										<div class="col-xs-12 col-sm-4 col-md-4">
+											<div class="form-group">
+												<label for="documento" >Agregar Documento</label>
+												<input type="file" name="documento" type="file" title="Search for a file to add"/>
+											</div>
+										</div>
+									</div>
+
+                    			</form>
+                    		</div>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+            	<div class="row">
+					<div class="col-xs-12 col-md-2">
+						<input value="Guardar" class="btn btn-primary btn-block btn-save" tabindex="7">
+					</div>
+					<div class="col-xs-12 col-md-2">
+						<input value="Cancelar" class="btn btn-danger btn-block" tabindex="7"></div>
+				</div>
+            </div>
+        </div>
+	</div>
+</div>	

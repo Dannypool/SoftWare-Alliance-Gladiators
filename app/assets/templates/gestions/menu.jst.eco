@@ -1,0 +1,67 @@
+<div class="col-md-3">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Panel heading
+    </div>
+    <div id="nav-lateral">
+      <ul class="nav nav-tabs nav-stacked">
+        <li>
+          <a data-toggle="collapse" data-parent="#nav-lateral" href="#navAspirantes"><i class="glyphicon glyphicon-user"></i> Aspirantes</a>
+          <div class="collapse" id="navAspirantes">
+            <ul>
+              <li>
+                <a type="button" class="btn" href="#Registro_Aspirante">Registro</a>
+              </li>
+              <li>
+                <a type="button" class="btn" href="#Modificar_Aspirante">Modificar</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a data-toggle="collapse" data-parent="#nav-lateral" href="#navCurso"><i class="glyphicon glyphicon-book"></i> Curso</a>
+          <div class="collapse" id="navCurso">
+            <ul>
+              <li>
+                <a type="button" class="btn" href="#Cursos">Catalogo</a>
+              </li>
+              <li>
+                <a type="button" class="btn" href="#Modificar_Curso">Modificar</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a data-toggle="collapse" data-parent="#nav-lateral" href="#navFormacion"><i class="glyphicon glyphicon-filter"></i> Formacion</a>
+          <div class="collapse" id="navFormacion">
+            <ul>
+              <li>
+                <a type="button" class="btn" href="#Registro_Formacion">Registro</a>
+              </li>
+              <li>
+                <a type="button" class="btn" href="#Modificar_Formacion">Modificar</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a data-toggle="collapse" data-parent="#nav-lateral" href="#navFiguras"><i class="glyphicon glyphicon-user"></i> Figuras Educativas
+          </a>
+          <div class="collapse" id="navFiguras">
+            <ul>
+              <li>
+                <a type="button" class="btn" href="#Registro_FE">Registro</a>
+              </li>
+              <li>
+                <a type="button" class="btn" href="#Modificar_FE">Modificar</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="panel-footer">
+      Panel footer
+    </div>
+  </div>
+</div>

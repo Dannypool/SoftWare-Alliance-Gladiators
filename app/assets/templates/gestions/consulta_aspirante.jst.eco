@@ -1,0 +1,40 @@
+<div class="col-md-9">
+	<div class="panel panel-primary">
+        <div class="panel-heading">
+            Consulta de Aspirantes
+        </div>
+        <div class="panel-body">
+            <div class="nav nav-tabs nav-stacked">
+                <form id="buscar_aspirante">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="id_aspirante" >ID Aspirante</label>
+                                <input type="text" name="id_aspirante" id="id_aspirante" class="form-control input-xs"/>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="nombre-aspirante" >Nombre</label>
+                                <input type="text" name="nombre-aspirante" id="nombre-aspirante" class="form-control input-xs" placeholder="Ingresa Nombre o Apellido del Aspirante"/>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="fecha-aspirante" >Fecha de incorporación</label>
+                                <input type="date" name="fecha-aspirante" id="fecha-aspirante" class="form-control input-xs"/>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                            <label></label>
+                            <input  type="submit" class="btn btn-info btn-block" name="buscar" id="buscar" value="Buscar" />
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

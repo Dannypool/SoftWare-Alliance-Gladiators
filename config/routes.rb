@@ -1,5 +1,11 @@
 GestionFe::Application.routes.draw do
 
+  resources :course_statuses
+
+
+  resources :modalities
+
+
   scope "api" do
     resources :localities
 

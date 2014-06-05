@@ -24,7 +24,6 @@ class GestionFe.Routers.Gestions extends Backbone.Router
     @localidades = new GestionFe.Collections.Localidades
     @localidades.fetch success: ->
       that.localidadesFetched.resolve()
-    console.log @localidades
     @contenido = $('#panelContenido')
 
   #@Registro_Aspirante.$el.hide()
@@ -34,19 +33,19 @@ class GestionFe.Routers.Gestions extends Backbone.Router
     that = this
     view = new GestionFe.Views.RegistroAspirantes()
     @municipiosFetched.done ->
-      view.allMunicipios(that.municipios)
+      view.getMunicipios(that.municipios)
     @estadosFetched.done ->
-      view.allEstados(that.estados)
+      view.getEstados(that.estados)
     @localidadesFetched.done ->
-      view.allLocalidades(that.localidades)
+      view.getLocalidades(that.localidades)
 
     that.contenido.html(view.$el)
 
 
 
-  #show_modificar_aspirante: ->
-   # view = new GestionFe.Views.ConsultarAspirante()
-    #$('#panelContenido').html(view.render().el)
+  show_modificar_aspirante: ->
+    view = new GestionFe.Views.ConsultarAspirante()
+    @contenido.html(view.render().el)
 
 #  showCursos: ->
  #   view = new GestionFe.Views.Cursos(collection: @cursos)

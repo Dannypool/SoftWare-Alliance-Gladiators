@@ -18,6 +18,6 @@ class LocalitiesController < ApplicationController
   end
 
   def destroy
-    respond_with Municipio.destroy(params[:id])
+    respond_with Locality.destroy(params[:id])
   end
 end

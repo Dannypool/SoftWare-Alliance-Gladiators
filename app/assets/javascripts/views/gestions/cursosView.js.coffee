@@ -18,7 +18,6 @@ class GestionFe.Views.Cursos extends Backbone.View
     @collection.each(@renderCat, this)
 
   renderCat: (curso)->
-    console.log curso
     view = new GestionFe.Views.RowCursos(model: curso)
     $('#tabla-cursos').append(view.$el)
 

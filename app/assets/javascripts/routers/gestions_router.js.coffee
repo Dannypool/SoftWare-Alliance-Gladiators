@@ -4,13 +4,30 @@ class GestionFe.Routers.Gestions extends Backbone.Router
     'Registro_Aspirante': 'show_registroAspirante'
     'Modificar_Aspirante': 'show_modificar_aspirante'
     'Cursos': 'showCursos'
+    'cursos_vigentes': 'showCatalogo'
 
   initialize: ->
     view = new GestionFe.Views.Menu()
     $('#menuLateral').html(view.render().el)
     @contenido = $('#panelContenido')
-    #@cursos = new GestionFe.Collections.Cursos()
-    #@cursos.fetch()
+    @cursos = new GestionFe.Collections.Cursos()
+    #llenado de curso
+    @cursos.add([
+      {
+        curso: "curso 1",
+        descripcion: "descripcion 1"
+        status: 1
+      },
+      {
+        curso: "curso 2",
+        descripcion: "descripcion 2"
+        status: 1
+      },
+      {
+        curso: "curso 3",
+        descripcion: "descripcion 3"
+        status: 1
+      }])
     that = this
     @municipiosFetched = new $.Deferred()
     @municipios = new GestionFe.Collections.Municipios
@@ -47,7 +64,22 @@ class GestionFe.Routers.Gestions extends Backbone.Router
     view = new GestionFe.Views.ConsultarAspirante()
     @contenido.html(view.render().el)
 
-#  showCursos: ->
- #   view = new GestionFe.Views.Cursos(collection: @cursos)
+  showCursos: ->
+    view = new GestionFe.Views.Cursos(collection: @cursos)
     #@catCursos.$el.show()
+
+  showCatalogo: ->
+    cursosVigentes = new GestionFe.Collections.CursosVigentes()
+    cursosVigentes.add [
+      {
+        course_id: 1,
+        municipality_id: 1,
+        education_type_id: 1,
+        language_id: 1,
+        course_status_id: 1,
+        noAsistencias:
+      }
+    ]
+    console.log cursosVigentes
+    #view = new GestionFe.Views.CursosVigentes(collection: cursosVigentes)
 

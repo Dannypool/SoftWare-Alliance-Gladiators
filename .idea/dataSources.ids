@@ -3,7 +3,11 @@
   <data-source source="LOCAL" name="Rails Gestion FE: development" uuid="dccce97e-cdcb-4f63-b9e2-f0b0941bf12c">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
+<<<<<<< HEAD
+  <data-source source="LOCAL" name="Rails Gestion FE: test" uuid="ee4ddcd2-8b39-4f90-8e13-ae5806306551">
+=======
   <data-source source="LOCAL" name="Rails Gestion FE: test" uuid="3ddc721b-5dfb-486b-94ec-da3c508cc74d">
+>>>>>>> 8aff51e8e8c107ecad2392669d9149e06bb649d8
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
 </component>

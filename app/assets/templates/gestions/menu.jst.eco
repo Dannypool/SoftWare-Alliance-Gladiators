@@ -26,7 +26,7 @@
                 <a type="button" class="btn" href="#Cursos">Catalogo</a>
               </li>
               <li>
-                <a type="button" class="btn" href="#Modificar_Curso">Modificar</a>
+                <a type="button" class="btn" href="#cursos_vigentes">Cursos vigentes</a>
               </li>
             </ul>
           </div>

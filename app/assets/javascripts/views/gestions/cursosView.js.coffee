@@ -3,7 +3,6 @@ class GestionFe.Views.Cursos extends Backbone.View
   el: '#panelContenido'
   events:
     'submit #form-curso': 'saveCurso'
-  municipios: null
   initialize: ->
     @render()
     @collection.on('reset', @addAll, this)
@@ -14,14 +13,12 @@ class GestionFe.Views.Cursos extends Backbone.View
     @addAll()
     this
 
-  reset: ->
-    this
-
   addAll: ->
     @$('#tabla-cursos').empty()
     @collection.each(@renderCat, this)
 
   renderCat: (curso)->
+    console.log curso
     view = new GestionFe.Views.RowCursos(model: curso)
     $('#tabla-cursos').append(view.$el)
 
@@ -30,11 +27,15 @@ class GestionFe.Views.Cursos extends Backbone.View
     nombre = @$('#nombre_curso').val()
     descripcion = @$('#descripcion_curso').val()
     attributes = {
-      nombre: nombre,
-      descripcion: descripcion
+      curso: nombre,
+      descripcion: descripcion,
+      status: 1
     }
+    @collection.add(attributes)
+    ###
     @collection.create attributes,
       wait: true
       success: ->
         @$('#nombre_curso').val('')
         @$('#descripcion_curso').val('')
+    ###

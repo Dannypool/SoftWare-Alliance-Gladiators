@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
+  <component name="DataSourceManagerImpl" format="xml" hash="1967346034">
+=======
   <component name="DataSourceManagerImpl" format="xml" hash="20399250">
+>>>>>>> 8aff51e8e8c107ecad2392669d9149e06bb649d8
     <data-source source="LOCAL" name="Rails Gestion FE: development" uuid="dccce97e-cdcb-4f63-b9e2-f0b0941bf12c">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
@@ -9,10 +13,17 @@
       <user-password>df93df9adfc5dfdadf93df9a</user-password>
       <libraries />
     </data-source>
+<<<<<<< HEAD
+    <data-source source="LOCAL" name="Rails Gestion FE: test" uuid="ee4ddcd2-8b39-4f90-8e13-ae5806306551">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Dan\RubymineProjects\Gestion FE\db\test.sqlite3</jdbc-url>
+=======
     <data-source source="LOCAL" name="Rails Gestion FE: test" uuid="3ddc721b-5dfb-486b-94ec-da3c508cc74d">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/test.sqlite3</jdbc-url>
+>>>>>>> 8aff51e8e8c107ecad2392669d9149e06bb649d8
       <libraries />
     </data-source>
   </component>

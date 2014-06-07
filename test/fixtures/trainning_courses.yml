@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  municipality_id: 1
+  course_id: 1
+  education_type_id: 1
+  language_id: 1
+  course_status_id: 1
+  no_asistencias: 1
+
+two:
+  municipality_id: 1
+  course_id: 1
+  education_type_id: 1
+  language_id: 1
+  course_status_id: 1
+  no_asistencias: 1

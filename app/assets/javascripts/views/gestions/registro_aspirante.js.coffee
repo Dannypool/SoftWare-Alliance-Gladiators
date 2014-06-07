@@ -97,5 +97,70 @@ class GestionFe.Views.RegistroAspirantes extends Backbone.View
     @setLocalidades parseInt(@selectMunicipio.val(),10)
 
   guardarAspirante: ->
-    console.log(this.$('#nombre_aic').val())
+    nombre_aic = this.$('#nombre_aic').val()
+    apell_pat_aic = this.$('#apell_pat_aic').val()
+    apell_mat_aic = this.$('#apell_mat_aic').val()
+    fecha_nac = moment(this.$('#fecha_nac').val(), "DD/MM/YYYY")
+    sexo = this.$('#sexo_aic').val()
+    tipo_sangre = @$('#tipo_sangre_aic').val()
+    curp = @$('curp_aic').val()
+    rfc = @$('#rf_aic').val()
+    lugarNac = @$('#lugar_nac_aic').val()
+    tipo_zona = @$('input[name=rural]:checked').val()
+    lengua_indigena = @$('#lengua_indigena').val()
+    calle =@$('#calle_aic').val()
+    numero = @$('#numero_aic').val()
+    colonia = @$('#colonia_aic').val()
+    calzado = @$('#num_calzado').val()
+    talla_playera = @$('#talla_playera').val()
+    talla_pans = @$('#talla_pants').val()
+    telefono = @$('#telefono_aic').val()
+    educacionNivel = @$('input[name=nivelEstudio]:checked').val()
 
+    tipo_secundadia = @$('#tipo-secundaria').val()
+    nombre_secundadia = @$('#nombreEscuela').val()
+
+    if educacionNivel == 1
+      nivel_educacion = @$('#tipo_media').val()
+      nombre_educacion = @$('#nombre_media').val()
+    else if educacionNivel == 2
+      nivel_educacion = @$('#tipo_media').val()
+      nombre_educacion = @$('#nombre_media').val()
+    else if educacionNivel == 0
+      nivel_educacion = @$('#tipo-secundaria').val()
+      nombre_educacion = @$('#nombreEscuela').val()
+
+    aspirante = {
+      nombre: nombre_aic,
+      aPaterno: apell_pat_aic,
+      aMaterno: apell_mat_aic,
+      fechaNac: fecha_nac.format('DD/MM/YYYY'),
+      sexo: sexo,
+      tipoSangre: tipo_sangre,
+      curp: curp,
+      lugarNac: lugarNac,
+      tipoZona: tipo_zona,
+      lengua_id: lengua_indigena, #modificar al catalogo de lenguas
+      direcion: {
+        calle: calle,
+        numero:numero,
+        colonia: colonia,
+        estado: @selectEstado.val()
+        municipio: @selectMunicipio.val()
+        localidad: @selectLocalidad.val()
+      },
+      calzado: calzado,
+      tallaPans: talla_pans,
+      tallaPlayera: talla_playera,
+      telefono: telefono,
+      educacion_id: educacionNivel,
+      secundaria:{
+        tipo: tipo_secundadia,
+        nombre: nombre_secundadia
+      },
+      educacion: {
+        tipo: nivel_educacion,
+        nombre: nombre_educacion
+      }
+    }
+    console.log aspirante

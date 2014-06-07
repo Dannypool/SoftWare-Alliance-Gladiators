@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  venue_id: 1
+  venue_locality_id: 1
+  education_type_id: 1
+  language_id: 1
+  necesidad: 1
+
+two:
+  venue_id: 1
+  venue_locality_id: 1
+  education_type_id: 1
+  language_id: 1
+  necesidad: 1

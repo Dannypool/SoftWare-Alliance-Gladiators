@@ -17,4 +17,4 @@
 /config/database.yml
 /config/*.*
 config/*.*
-.idea/workspace.xml
+.idea/

@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="289325638">
+  <component name="DataSourceManagerImpl" format="xml" hash="1967346034">
     <data-source source="LOCAL" name="Rails Gestion FE: development" uuid="dccce97e-cdcb-4f63-b9e2-f0b0941bf12c">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql:conafe</jdbc-url>
       <user-name>dan</user-name>
       <user-password>df93df9adfc5dfdadf93df9a</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails Gestion FE: test" uuid="ee4ddcd2-8b39-4f90-8e13-ae5806306551">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Dan\RubymineProjects\Gestion FE\db\test.sqlite3</jdbc-url>
       <libraries />
     </data-source>
   </component>

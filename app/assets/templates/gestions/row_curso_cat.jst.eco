@@ -1,11 +1,11 @@
 <td>
-    <input type="text" required class="form-control input-sm nombre-curso"  value="<%= @curso.nombre %>" disabled>
+    <input type="text" required class="form-control input-sm nombre-curso"  value="<%= @curso.curso %>" disabled>
 </td>
 <td>
     <input type="text" required class="form-control input-sm descripcion-curso"  value="<%= @curso.descripcion %>" disabled>
 </td>
 <td>
-    <% if @curso.habilitado: %>
+    <% if @curso.status: %>
         <p class="habilitado-curso">Habilitado</p>
     <% else: %>
         <p class="habilitado-curso">Deshabilitado</p>

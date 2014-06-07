@@ -3,4 +3,7 @@
   <data-source source="LOCAL" name="Rails Gestion FE: development" uuid="dccce97e-cdcb-4f63-b9e2-f0b0941bf12c">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
+  <data-source source="LOCAL" name="Rails Gestion FE: test" uuid="ee4ddcd2-8b39-4f90-8e13-ae5806306551">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>

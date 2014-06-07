@@ -1,4 +1,4 @@
-class GestionFe.Models.Curso extends Backbone.Model
+class GestionFe.Models.CursoVigente extends Backbone.Model
   idAttribute: 'id'
   default: {
     id: null,

@@ -19,8 +19,9 @@ class GestionFe.Views.RowCursos extends Backbone.View
     @$descripcion = @$('.descripcion-curso')
     @$btnGuardar.hide();
     @$btnCancelar.hide();
-    @model.on('change:habilitado',@cambioEstado, this)
-    @model.on('change',@cambioOpcion, this)
+    @model.on('change:status',@cambioEstado, this)
+    @model.on('change:curso',@cambioOpcion, this)
+    @model.on('change:descripcion',@cambioOpcion, this)
   render: ->
     $(@el).html(@template(curso: @model.toJSON() ))
     this
@@ -44,32 +45,36 @@ class GestionFe.Views.RowCursos extends Backbone.View
       this.$btnCancelar.hide();
       @$nombre.prop('disabled', true);
       @$descripcion.prop('disabled', true);
-      @$nombre.val(@model.get('nombre'))
+      @$nombre.val(@model.get('curso'))
       @$descripcion.val(this.model.get('descripcion'))
 
   actualizarCurso: ->
     nombre = @$nombre.val()
     descripcion = @$descripcion.val()
     attributes = {
-      nombre: nombre,
+      curso: nombre,
       descripcion: descripcion
     }
+    @model.set(attributes)
+    ###
     @model.save attributes,
       wait: true
       success: -> console.log "editado"
+    ###
 
   habilitarCurso: ->
-    if @model.get('habilitado')
-      @model.set({habilitado: false}, {silence: true})
+    if @model.get('status')
+      @model.set({status: false}, silence: true)
     else
-      @model.set({habilitado: true}, {silence: true})
+      @model.set({status: true}, silence: true)
+    ###
     @model.save
       wait: true
       success: -> console.log "habilitado"
-
+    ###
   cambioEstado: ->
-    console.log @model.get('habilitado')
-    if @model.get('habilitado')
+    console.log @model.get('status')
+    if @model.get('status')
       @$pHabilitado.text("Habilitado")
     else
       @$pHabilitado.text('Deshabilitado')

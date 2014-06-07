@@ -72,14 +72,39 @@ class GestionFe.Routers.Gestions extends Backbone.Router
     cursosVigentes = new GestionFe.Collections.CursosVigentes()
     cursosVigentes.add [
       {
+        id: 1
         course_id: 1,
         municipality_id: 1,
         education_type_id: 1,
         language_id: 1,
         course_status_id: 1,
-        noAsistencias:
+        no_asistencias: 0,
+        fecha_inicio: "12/12/12",
+        fecha_fin: "12/12/13"
+      },
+      {
+        id: 2
+        course_id: 2,
+        municipality_id: 1,
+        education_type_id: 1,
+        language_id: 1,
+        course_status_id: 1,
+        no_asistencias: 0,
+        fecha_inicio: "12/12/12",
+        fecha_fin: "12/12/13"
+      },
+      {
+        id: 3
+        course_id: 3,
+        municipality_id: 1,
+        education_type_id: 1,
+        language_id: 1,
+        course_status_id: 1,
+        no_asistencias: 0,
+        fecha_inicio: "12/12/12",
+        fecha_fin: "12/12/13"
       }
     ]
     console.log cursosVigentes
-    #view = new GestionFe.Views.CursosVigentes(collection: cursosVigentes)
+    view = new GestionFe.Views.CursosVigentes(collection: cursosVigentes)
 

@@ -1,0 +1,18 @@
+<tr>
+    <td>
+        <label class="control-label"><%= @curso.nombre %></label>
+    </td>
+    <td>
+        <label class="control-label"><%= @curso.tipo %></label>
+    </td>
+    <td>
+        <label class="control-label"><%= @curso.fecha_inicio %></label>
+    </td>
+    <td>
+        <label class="control-label"><%= @curso.fecha_fin %></label>
+    </td>
+    <td>
+      <button class="btn btn-default btn-editar" id="<%= @curso.id %>">Detalles</button>
+
+    </td>
+</tr>

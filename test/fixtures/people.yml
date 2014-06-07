@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  language_id: 1
+  nombre: 1
+  a_paterno: MyString
+  a_materno: MyString
+  fecha_nac: 2014-06-07
+  sexo: 1
+  tipo_sangre: 1
+  curp: MyString
+  rfc: MyString
+  lugar_nac: MyString
+  tipo_zona: 1
+  calzado: 1
+  talla_playera: 1
+  talla_pants: 1
+  telefono: MyString
+
+two:
+  language_id: 1
+  nombre: 1
+  a_paterno: MyString
+  a_materno: MyString
+  fecha_nac: 2014-06-07
+  sexo: 1
+  tipo_sangre: 1
+  curp: MyString
+  rfc: MyString
+  lugar_nac: MyString
+  tipo_zona: 1
+  calzado: 1
+  talla_playera: 1
+  talla_pants: 1
+  telefono: MyString

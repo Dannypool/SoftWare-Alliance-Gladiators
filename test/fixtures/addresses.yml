@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  calle: MyString
+  numero: 1
+  colonia: MyString
+  fecha_de_actualizacion: 2014-06-06
+  locality_id: 1
+  person_id: 1
+
+two:
+  calle: MyString
+  numero: 1
+  colonia: MyString
+  fecha_de_actualizacion: 2014-06-06
+  locality_id: 1
+  person_id: 1

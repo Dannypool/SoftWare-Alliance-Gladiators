@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  activity_id: 1
+  person_id: 1
+  fecha_inicio: 2014-06-07
+  fecha_fin: 2014-06-07
+  status: 1
+
+two:
+  activity_id: 1
+  person_id: 1
+  fecha_inicio: 2014-06-07
+  fecha_fin: 2014-06-07
+  status: 1

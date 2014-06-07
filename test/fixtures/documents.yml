@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre: MyString
+  fecha_creacion: 2014-06-07
+  repository_id: 1
+
+two:
+  nombre: MyString
+  fecha_creacion: 2014-06-07
+  repository_id: 1

@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  person_id: 1
+  salud: 1
+  descripcion_salud: MyString
+  enfermedad: 1
+  colaborador: 1
+  funcion: MyString
+  familiares: 1
+  termino_estudios: 2014-06-07
+  deuda_materia: 1
+  materia: MyString
+  enterado: MyString
+  especificacion_enterado: 1
+  nivel_servicio: 1
+
+two:
+  person_id: 1
+  salud: 1
+  descripcion_salud: MyString
+  enfermedad: 1
+  colaborador: 1
+  funcion: MyString
+  familiares: 1
+  termino_estudios: 2014-06-07
+  deuda_materia: 1
+  materia: MyString
+  enterado: MyString
+  especificacion_enterado: 1
+  nivel_servicio: 1

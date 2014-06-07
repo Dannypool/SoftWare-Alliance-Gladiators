@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  momento: 1
+  momento: 1
+  year: 1
+  fecha: 2014-06-06
+  descripcion: 1
+
+two:
+  momento: 1
+  momento: 1
+  year: 1
+  fecha: 2014-06-06
+  descripcion: 1

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  allocated_figure_id: 1
+  training_courses: 1
+  calificacion: MyString
+
+two:
+  allocated_figure_id: 1
+  training_courses: 1
+  calificacion: MyString

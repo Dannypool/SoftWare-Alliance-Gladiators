@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  allocated_figure_id: 1
+  evaluacion: 1
+  observacion: MyString
+  moment_momento: 1
+  moment_year: 1
+
+two:
+  allocated_figure_id: 1
+  evaluacion: 1
+  observacion: MyString
+  moment_momento: 1
+  moment_year: 1

@@ -149,17 +149,11 @@ class GestionFe.Views.RegistroAspirantes extends Backbone.View
     educacionNivel = @$('input[name=nivelEstudio]:checked').val()
 
     tipo_secundadia = @$('#tipo-secundaria').val()
-    nombre_secundadia = @$('#nombreEscuela').val()
-
-    if educacionNivel == 1
-      nivel_educacion = @$('#tipo_media').val()
-      nombre_educacion = @$('#nombre_media').val()
-    else if educacionNivel == 2
-      nivel_educacion = @$('#tipo_media').val()
-      nombre_educacion = @$('#nombre_media').val()
-    else if educacionNivel == 0
-      nivel_educacion = @$('#tipo-secundaria').val()
-      nombre_educacion = @$('#nombreEscuela').val()
+    nombre_secundadia = @$('#nombre-secundaria').val()
+    tipo_media = @$('#tipo_media').val()
+    nombre_media = @$('#nombre_media').val()
+    tipo_superior = @$('#tipo-superior').val()
+    nombre_superior = @$('#nombre-superior').val()
 
     aspirante = {
       nombre: nombre_aic,
@@ -188,9 +182,19 @@ class GestionFe.Views.RegistroAspirantes extends Backbone.View
         school_type_id: tipo_secundadia,
         nombre: nombre_secundadia
       },
-      educacion: {
-        school_type_id: nivel_educacion,
-        nombre: nombre_educacion
+      media: {
+        school_type_id: tipo_media,
+        nombre: nombre_media
+      },
+      superior: {
+        school_type_id: tipo_superior,
+        nombre: nombre_superior
+      }
+      cuestionario: {
+        salud: $('#p1').val(),
+        descripcion_salud: $('#p1-descripcion').val(),
+        salud: $('#p1').val(),
+        descripcion_salud: $('#p1-descripcion').val(),
       }
     }
     console.log aspirante

@@ -314,41 +314,55 @@
 							<div class="col-xs-12">
 								<form role="form">
 									<div class="row">
-										<div class="col-xs-12 col-sm-8 col-md-8">
+										<div class=" col-md-4">
 											<div class="form-group">
 												<label for="pregunta-1" >1.- ¿El clima o viaje afectan tu salud?</label>
-												<select  name="pregunta-1" id="pregunta-1" class="form-control input-sm">
-													<option>Si</option>
-													<option>No</option>
-												</select>
+
+                                                <select  name="pregunta-1" id="p1" class="form-control input-sm">
+                                                    <option value="0">Si</option>
+                                                    <option value="1">No</option>
+                                                </select>
+
 											</div>
 										</div>
+										<div class=" col-md-8">
+                                            <div class="form-group">
+                                                <label for="pregunta-1" >Especifica</label>
+                                                <input type="text" name="pregunta-3-1" id="p1-descripcion" class="form-control input-sm"/>
+                                            </div>
+                                        </div>
 									</div>
 									<div class="row">
-										<div class="col-xs-12 col-sm-8 col-md-8">
+										<div class="col-md-4">
 											<div class="form-group">
 												<label for="pregunta-2" >2.- ¿Padeces Alguna enfermedad que te impida realizar actividades en comunidad?</label>
-												<select  name="pregunta-2" id="pregunta-2" class="form-control input-sm">
-													<option>Si</option>
-													<option>No</option>
+												<select  name="pregunta-2" id="p2" class="form-control input-sm">
+													<option value="0">Si</option>
+                                                    <option value="1">No</option>
 												</select>
 											</div>
 										</div>
+										<div class=" col-md-8">
+                                            <div class="form-group">
+                                                <label for="pregunta-1" >Especifica</label>
+                                                <input type="text" name="pregunta-3-1" id="p2-descripcion" class="form-control input-sm"/>
+                                            </div>
+                                        </div>
 									</div>
 									<div class="row">
 										<div class="col-xs-12 col-sm-6 col-md-6">
 											<div class="form-group">
 												<label for="pregunta-3" >3.- ¿Has colaborado con alguna institución educativa?</label>
-												<select  name="pregunta-3" id="pregunta-3" class="form-control input-sm">
-													<option>Si</option>
-													<option>No</option>
+												<select  name="pregunta-3" id="p3" class="form-control input-sm">
+													<option value="0">Si</option>
+                                                    <option value="1">No</option>
 												</select>
 											</div>
 										</div>
 										<div class="col-xs-12 col-sm-6 col-md-6">
 											<div class="form-group">
 												<label for="pregunta-3-1" >¿Que funciones desempeñabas?</label>
-												<input type="text" name="pregunta-3-1" id="pregunta-3-1" class="form-control input-sm"/>
+												<input type="text" name="pregunta-3-1" id="p3-descripcion" class="form-control input-sm"/>
 											</div>
 										</div>
 									</div>
@@ -356,21 +370,21 @@
 										<div class="col-xs-12 col-sm-8 col-md-8">
 											<div class="form-group">
 												<label for="pregunta-4">4.- ¿Cuentas con familiares que dependan economicamente de ti ?</label>
-												<select  name="pregunta-4" id="pregunta-4" class="form-control input-sm">
-													<select name="pregunta-4-1" id="pregunta-4-1" class="form-control input-sm">
-                                                        <option>0</option>
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                        <option>4</option>
-                                                        <option>5</option>
-                                                        <option>6</option>
-                                                        <option>7</option>
-                                                        <option>8</option>
-                                                        <option>9</option>
-                                                        <option>10</option>
-                                                    </select>
-												</select>
+
+                                                <select name="pregunta-4-1" id="p4" class="form-control input-sm">
+                                                    <option value="0">0</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                </select>
+
 											</div>
 										</div>
 									</div>
@@ -379,7 +393,7 @@
 											<div class="form-group">
 												<label for="pregunta-5" >5.-¿Cuando terminaste tus estudios?</label>
 												<div class='input-group date' id='fecha_fin_estudios'>
-                                                    <input type='text' class="form-control input-sm" />
+                                                    <input type='text' class="form-control input-sm" id="p5" />
                                                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                                                     </span>
                                                 </div>
@@ -390,16 +404,16 @@
 										<div class="col-xs-12 col-sm-4 col-md-4">
 											<div class="form-group">
 												<label for="pregunta-6" >6.- ¿Debes alguna materia?</label>
-												<select  name="pregunta-6" id="pregunta-6" class="form-control input-sm">
-													<option>Si</option>
-													<option>No</option>
+												<select  name="pregunta-6" id="p6" class="form-control input-sm">
+													<option value="0">Si</option>
+													<option value="1">No</option>
 												</select>
 											</div>
 										</div>
 										<div class="col-xs-12 col-sm-8 col-md-8">
 											<div class="form-group">
 												<label for="pregunta-6-1" >¿Cual?</label>
-												<input type="text" name="pregunta-6-1" id="pregunta-6-1" class="form-control input-sm"/>
+												<input type="text" name="pregunta-6-1" id="p6-descripcion" class="form-control input-sm"/>
 											</div>
 										</div>
 									</div>
@@ -407,7 +421,7 @@
 										<div class="col-xs-12 col-sm-4 col-md-4">
 											<div class="form-group">
 												<label for="pregunta-7">7.-¿Como te enteraste del conafe?</label>
-												<select  name="pregunta-7" id="pregunta-7" class="form-control input-sm">
+												<select  name="pregunta-7" id="p7" class="form-control input-sm">
 													<option value='1'>Oficina del conafe</option>
 													<option value='2'>Radio</option>
 													<option value='3'>T.V.</option>
@@ -421,11 +435,11 @@
 									<div class="row">
 										<div class="col-xs-12 col-sm-8 col-md-8">
 											<div class="form-group">
-												<label for="pregunta-9" >8.-¿En que nivel educativo te gustaria prestar tu servicio social</label>
-												<select  name="pregunta-9" id="pregunta-9" class="form-control input-sm">
-													<option>Educación inicial</option>
-													<option>Preescolar</option>
-													<option>Primaria</option>
+												<label for="pregunta-8" >8.-¿En que nivel educativo te gustaria prestar tu servicio social</label>
+												<select  name="pregunta-8" id="p8" class="form-control input-sm">
+													<option value="0">Educación inicial</option>
+													<option value="1">Preescolar</option>
+													<option value="2">Primaria</option>
 												</select>
 											</div>
 										</div>

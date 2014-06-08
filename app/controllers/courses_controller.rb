@@ -8,10 +8,6 @@ class CoursesController < ApplicationController
     respond_with Course.find(params[:id])
   end
 
-  #def show_habilitado
-   # respond_with Course.cursos_habilitados
-  #end
-
   def create
     respond_with Course.create(params[:course])
   end

@@ -9,6 +9,10 @@ class CourseStatusesController < ApplicationController
     respond_with CourseStatus.find(params[:id])
   end
 
+  def show_habilitado
+   respond_with CourseStatus.cursos_habilitados
+  end
+
   def create
     respond_with CourseStatus.create(params[:curso])
   end

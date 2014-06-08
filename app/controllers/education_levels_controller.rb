@@ -10,7 +10,6 @@ class EducationLevelsController < ApplicationController
   end
 
   def create
-
     respond_with EducationalLevel.create(params[:educational_level])
   end
 

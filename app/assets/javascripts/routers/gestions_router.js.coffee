@@ -30,7 +30,12 @@ class GestionFe.Routers.Gestions extends Backbone.Router
 
   show_registroAspirante: ->
     that = this
+
+    idiomas = new GestionFe.Collections.Idiomas
+    tipoEducacion = new GestionFe.Collections.TiposEscuelas
+
     view = new GestionFe.Views.RegistroAspirantes()
+
     @municipiosFetched.done ->
       view.getMunicipios(that.municipios)
     @estadosFetched.done ->
@@ -38,6 +43,18 @@ class GestionFe.Routers.Gestions extends Backbone.Router
     @localidadesFetched.done ->
       view.getLocalidades(that.localidades)
       that.contenido.html(view.$el)
+
+    tipoEducacionFetched = new $.Deferred()
+    tipoEducacion.fetch success: ->
+      tipoEducacionFetched.resolve()
+    tipoEducacionFetched.done ->
+      view.getTipoEducacion tipoEducacion
+
+    idiomasFetched = new $.Deferred()
+    idiomas.fetch success: ->
+      idiomasFetched.resolve()
+    idiomasFetched.done ->
+      view.getIdiomas idiomas
 
 
 

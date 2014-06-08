@@ -11,6 +11,8 @@ GestionFe::Application.routes.draw do
     resources :language
     resources :course_statuses
     resources :states
+    resources :education_levels
+    resources :school_types
   end
 
 

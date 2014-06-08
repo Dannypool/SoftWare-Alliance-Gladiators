@@ -1,5 +1,7 @@
 class GestionFe.Views.RegistroAspirantes extends Backbone.View
   template: JST['gestions/registro_aspirantes']
+  templateSelectIdioma: JST['gestions/catalogos/select_idioma']
+  templateSelectGeneric: JST['gestions/catalogos/select_generic']
   events:
     'click input.nivelEducacion': 'checkNivelEducacion'
     'change #select-estado' : 'resetMunicipio'
@@ -8,6 +10,8 @@ class GestionFe.Views.RegistroAspirantes extends Backbone.View
   localidades: null
   municipios: null
   estados: null
+  idiomas: null
+  tiposEducacion: null
   initialize:() ->
     @render()
     @nivelMedia  = this.$('#mediaSuperior')
@@ -96,6 +100,33 @@ class GestionFe.Views.RegistroAspirantes extends Backbone.View
   resetLocalidad: ->
     @setLocalidades parseInt(@selectMunicipio.val(),10)
 
+  getIdiomas: (idiomas) ->
+    @idiomas = idiomas
+    @$('#lengua_indigena').empty()
+    @idiomas.each(@renderIdioma, this)
+
+  renderIdioma: (idioma) ->
+    html = @templateSelectIdioma(idioma: idioma.toJSON())
+    $('#lengua_indigena').append(html)
+
+  getTipoEducacion: (tiposEducacion) ->
+    @tiposEducacion = tiposEducacion
+    @$('#tipo-secundaria').empty()
+    @$('#tipo-media').empty()
+    @$('#tipo-superior').empty()
+    @tiposEducacion.each(@renderTipoEducacion, this)
+
+  renderTipoEducacion: (tipoEducacion) ->
+    tipo = tipoEducacion.toJSON()
+    tipo['nombre'] = tipo.tipo
+    html = @templateSelectGeneric(select: tipo)
+    if tipo.educational_level_id == 1
+      $('#tipo-secundaria').append(html)
+    if tipo.educational_level_id == 2
+      $('#tipo-media').append(html)
+    if tipo.educational_level_id == 3
+      $('#tipo-superior').append(html)
+
   guardarAspirante: ->
     nombre_aic = this.$('#nombre_aic').val()
     apell_pat_aic = this.$('#apell_pat_aic').val()
@@ -132,15 +163,15 @@ class GestionFe.Views.RegistroAspirantes extends Backbone.View
 
     aspirante = {
       nombre: nombre_aic,
-      aPaterno: apell_pat_aic,
-      aMaterno: apell_mat_aic,
-      fechaNac: fecha_nac.format('DD/MM/YYYY'),
+      a_paterno: apell_pat_aic,
+      a_materno: apell_mat_aic,
+      fecha_nac: fecha_nac.format('DD/MM/YYYY'),
       sexo: sexo,
-      tipoSangre: tipo_sangre,
+      tipo_sangre: tipo_sangre,
       curp: curp,
-      lugarNac: lugarNac,
-      tipoZona: tipo_zona,
-      lengua_id: lengua_indigena, #modificar al catalogo de lenguas
+      lugar_nac: lugarNac,
+      tipo_zona: tipo_zona,
+      language_id: lengua_indigena, #modificar al catalogo de lenguas
       direcion: {
         calle: calle,
         numero:numero,
@@ -150,16 +181,15 @@ class GestionFe.Views.RegistroAspirantes extends Backbone.View
         localidad: @selectLocalidad.val()
       },
       calzado: calzado,
-      tallaPans: talla_pans,
-      tallaPlayera: talla_playera,
+      talla_pants: talla_pans,
+      talla_playera: talla_playera,
       telefono: telefono,
-      educacion_id: educacionNivel,
       secundaria:{
-        tipo: tipo_secundadia,
+        school_type_id: tipo_secundadia,
         nombre: nombre_secundadia
       },
       educacion: {
-        tipo: nivel_educacion,
+        school_type_id: nivel_educacion,
         nombre: nombre_educacion
       }
     }

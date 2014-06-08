@@ -264,8 +264,8 @@
                                     <div class="row" id="mediaSuperior">
                                         <div class="col-md-6">
                                             <div class="form-group" >
-                                                <label for="tipo-secundaria">Media Superior:</label>
-                                                <select name="tipo-secundaria" id="tipo-media" class="form-control" tabindex="17">
+                                                <label for="tipo-media">Media Superior:</label>
+                                                <select name="tipo-media" id="tipo-media" class="form-control" tabindex="17">
                                                     <option value="S1">Diurna</option>
                                                     <option value="S2">Telesecundaria</option>
                                                     <option value="S3">Tecnica</option>
@@ -286,8 +286,8 @@
                                     <div class="row" id="superior">
                                         <div class="col-md-6">
                                             <div class="form-group" >
-                                                <label for="tipo-secundaria">Superior:</label>
-                                                <select name="tipo-secundaria" id="tipo-superior" class="form-control" tabindex="17">
+                                                <label for="tipo-superior">Superior:</label>
+                                                <select name="tipo-superior" id="tipo-superior" class="form-control" tabindex="17">
                                                     <option value="S1">Diurna</option>
                                                     <option value="S2">Telesecundaria</option>
                                                     <option value="S3">Tecnica</option>

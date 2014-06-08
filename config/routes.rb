@@ -1,24 +1,11 @@
 GestionFe::Application.routes.draw do
 
-  get "courses/index"
-
-  get "courses/show"
-
-  get "courses/create"
-
-  get "courses/update"
-
-  get "courses/destroy"
-
-  resources :course_statuses
-
-
   resources :modalities
 
 
   scope "api" do
     resources :localities
-
+    resources :courses
 
     resources :municipalities
 

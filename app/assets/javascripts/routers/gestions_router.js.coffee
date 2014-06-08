@@ -37,8 +37,7 @@ class GestionFe.Routers.Gestions extends Backbone.Router
       view.getEstados(that.estados)
     @localidadesFetched.done ->
       view.getLocalidades(that.localidades)
-
-    that.contenido.html(view.$el)
+      that.contenido.html(view.$el)
 
 
 
@@ -47,25 +46,13 @@ class GestionFe.Routers.Gestions extends Backbone.Router
     @contenido.html(view.render().el)
 
   showCursos: ->
-    cursos = new GestionFe.Collections.Cursos()
-    #llenado de curso
-    cursos.add([
-      {
-        curso: "curso 1",
-        descripcion: "descripcion 1"
-        status: 1
-      },
-      {
-        curso: "curso 2",
-        descripcion: "descripcion 2"
-        status: 1
-      },
-      {
-        curso: "curso 3",
-        descripcion: "descripcion 3"
-        status: 1
-      }])
-    view = new GestionFe.Views.Cursos(collection: cursos)
+
+    cursos = new GestionFe.Collections.Cursos
+    cursosFetched = new $.Deferred()
+    cursos.fetch success: ->
+      cursosFetched.resolve()
+    cursosFetched.done ->
+      new GestionFe.Views.Cursos(collection: cursos)
     #@catCursos.$el.show()
 
   showCatalogo: ->

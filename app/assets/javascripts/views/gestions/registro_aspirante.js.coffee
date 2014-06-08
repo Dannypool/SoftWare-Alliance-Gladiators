@@ -134,7 +134,7 @@ class GestionFe.Views.RegistroAspirantes extends Backbone.View
     fecha_nac = moment(this.$('#fecha_nac').val(), "DD/MM/YYYY")
     sexo = this.$('#sexo_aic').val()
     tipo_sangre = @$('#tipo_sangre_aic').val()
-    curp = @$('curp_aic').val()
+    curp = @$('#curp_aic').val()
     rfc = @$('#rf_aic').val()
     lugarNac = @$('#lugar_nac_aic').val()
     tipo_zona = @$('input[name=rural]:checked').val()
@@ -163,6 +163,7 @@ class GestionFe.Views.RegistroAspirantes extends Backbone.View
       sexo: sexo,
       tipo_sangre: tipo_sangre,
       curp: curp,
+      rfc: rfc,
       lugar_nac: lugarNac,
       tipo_zona: tipo_zona,
       language_id: lengua_indigena, #modificar al catalogo de lenguas
@@ -193,8 +194,17 @@ class GestionFe.Views.RegistroAspirantes extends Backbone.View
       cuestionario: {
         salud: $('#p1').val(),
         descripcion_salud: $('#p1-descripcion').val(),
-        salud: $('#p1').val(),
-        descripcion_salud: $('#p1-descripcion').val(),
+        enfermedad: $('#p2').val(),
+        tipo_enfermedad: $('#p2-descripcion').val(),
+        colaborador: $('#p3').val(),
+        funcion: $('#p3-descripcion').val(),
+        familiares: $('#p4').val(),
+        termino_estudios: $('#p5').val()
+        deuda_materia: $('#p6').val(),
+        materia: $('#p6-descripcion2').val(),
+        enterado: $('#p7').val(),
+        materia: $('#p7-descripcion').val(),
+        nivel_servicio: $('#p8').val(),
       }
     }
     console.log aspirante

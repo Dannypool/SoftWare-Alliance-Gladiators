@@ -10,7 +10,7 @@ class GestionFe.Views.Cursos extends Backbone.View
 
   render: ->
     this.$el.html(@template())
-    console.log "@collection"
+    console.log @collection
     @addAll()
     this
 
@@ -27,8 +27,8 @@ class GestionFe.Views.Cursos extends Backbone.View
     nombre = @$('#nombre_curso').val()
     descripcion = @$('#descripcion_curso').val()
     attributes = {
-      curso: nombre,
-      descripcion: descripcion,
+      nombre: nombre,
+      description: descripcion,
       status: 1
     }
     @collection.create attributes,

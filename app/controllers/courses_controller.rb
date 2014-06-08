@@ -9,11 +9,11 @@ class CoursesController < ApplicationController
   end
 
   def create
-    respond_with Course.create(params[:curso])
+    respond_with Course.create(params[:course])
   end
 
   def update
-    respond_with Course.update(params[:id],params[:curso])
+    respond_with Course.update(params[:id],params[:course])
   end
 
   def destroy

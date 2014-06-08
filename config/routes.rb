@@ -1,9 +1,9 @@
 GestionFe::Application.routes.draw do
 
-  resources :modalities
 
 
   scope "api" do
+    resources :modalities
     resources :localities
     resources :courses
 

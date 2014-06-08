@@ -1,4 +1,5 @@
 class LanguageController < InheritedResources::Base
+  respond_to :json
   #def index
   #end
 

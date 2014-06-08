@@ -410,15 +410,15 @@
 												</select>
 											</div>
 										</div>
-										<div class="col-xs-12 col-sm-8 col-md-8">
-											<div class="form-group">
-												<label for="pregunta-6-1" >¿Cual?</label>
-												<input type="text" name="pregunta-6-1" id="p6-descripcion" class="form-control input-sm"/>
-											</div>
-										</div>
+										<div class=" col-md-8">
+                                            <div class="form-group">
+                                                <label for="pregunta-1" >Especifica</label>
+                                                <input type="text" name="pregunta-3-1" id="p6-descripcion2" class="form-control input-sm"/>
+                                            </div>
+                                        </div>
 									</div>
 									<div class="row">
-										<div class="col-xs-12 col-sm-4 col-md-4">
+										<div class="col-md-4">
 											<div class="form-group">
 												<label for="pregunta-7">7.-¿Como te enteraste del conafe?</label>
 												<select  name="pregunta-7" id="p7" class="form-control input-sm">
@@ -431,6 +431,12 @@
 												</select>
 											</div>
 										</div>
+										<div class=" col-md-8">
+                                            <div class="form-group">
+                                                <label for="pregunta-1" >Especifica</label>
+                                                <input type="text" name="pregunta-3-1" id="p8-descripcion" class="form-control input-sm"/>
+                                            </div>
+                                        </div>
 									</div>
 									<div class="row">
 										<div class="col-xs-12 col-sm-8 col-md-8">

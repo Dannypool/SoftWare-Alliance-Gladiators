@@ -3,17 +3,23 @@ class GestionFe.Views.CursosVigentes extends Backbone.View
   templateRow: JST['gestions/cursos/row_curso_vigente']
   templateSelectTipoEducacion: JST['gestions/catalogos/select_tipo_educacion']
   templateSelectMunicipio: JST['gestions/catalogos/select_municipio']
+  templateSelectIdioma: JST['gestions/catalogos/select_idioma']
+  templateSelectCurso: JST['gestions/catalogos/select_cat_curso']
   el: '#panelContenido'
   cursos: null
   tiposEducacion: null
   municipios: null
+  idiomas: null
+  catCursos: null
   events:
     'click .btn-editar': 'showModal'
+    'click .btn-save': 'guardarCurso'
   initialize: ->
     @render()
+    this.$('.customhourpicker').datetimepicker({pickTime: false, format: 'DD/MM/YYYY', language: 'es'})
     @selectCurso = @$('.select-cursos')
     @collection.on('reset', @addAll, this)
-    #this.listenTo(this.collection, 'add', this.renderCat)
+    this.listenTo(this.collection, 'add', this.renderCursoVigente)
 
   render: ->
     this.$el.html(@template())
@@ -63,3 +69,35 @@ class GestionFe.Views.CursosVigentes extends Backbone.View
   renderMunicipio: (municipio) ->
     html = @templateSelectMunicipio(municipio: municipio.toJSON())
     $('.select-municipios').append(html)
+
+  getIdiomas: (idiomas) ->
+    @idiomas = idiomas
+    @$('.select-idioma').empty()
+    @idiomas.each(@renderIdioma, this)
+
+  renderIdioma: (idioma) ->
+    html = @templateSelectIdioma(idioma: idioma.toJSON())
+    $('.select-idioma').append(html)
+
+  getCursos: (cursos) ->
+    @catCursos = cursos
+    @$('.select-cursos').empty()
+    @catCursos.each(@renderCurso, this)
+
+  renderCurso: (curso) ->
+    html = @templateSelectCurso(curso: curso.toJSON())
+    $('.select-cursos').append(html)
+
+  guardarCurso: (e)->
+    e.preventDefault()
+    atributos = {
+      course_id: $('.select-idioma').val(),
+      course_status_id: 1,
+      education_type_id: $('.select-tipo-educacion').val(),
+      language_id: $('.select-idioma').val(),
+      municipality_id: $('.select-municipios').val(),
+      no_asistencias: 30,
+      fecha_inicio: $('#input-fecha-inicio').val()
+      fecha_fin: $('#input-fecha-fin').val()
+    }
+    console.log atributos

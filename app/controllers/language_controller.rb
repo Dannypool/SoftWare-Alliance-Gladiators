@@ -1,4 +1,4 @@
-class LanguageController < InheritedResources::Base
+class LanguageController < ApplicationController
   respond_to :json
   def index
   respond_with Language.all

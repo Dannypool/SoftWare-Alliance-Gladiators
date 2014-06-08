@@ -207,4 +207,7 @@ class GestionFe.Views.RegistroAspirantes extends Backbone.View
         nivel_servicio: $('#p8').val(),
       }
     }
-    console.log aspirante
+    @collection.create aspirante,
+      wait: true
+      success: ->
+        console.log "funciona!!!"

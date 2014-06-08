@@ -1,2 +1,2 @@
 class GestionFe.Collections.Aspirantes extends Backbone.Collection
-  url: 'api/courses'
+  url: 'api/people'

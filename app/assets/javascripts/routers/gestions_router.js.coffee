@@ -66,6 +66,7 @@ class GestionFe.Routers.Gestions extends Backbone.Router
       view = new GestionFe.Views.CursosVigentes(collection: cursosVigentes)
 
       cursos = new GestionFe.Collections.Cursos
+      cursos.cambiarUrl()
       catTipoEducacion = new GestionFe.Collections.TiposEducacion
       idiomas = new GestionFe.Collections.Idiomas
 
@@ -86,6 +87,7 @@ class GestionFe.Routers.Gestions extends Backbone.Router
         cursosFetched.resolve()
       cursosFetched.done ->
         view.getCursos cursos
+        view.addAll()
 
-      @municipiosFetched.done ->
+      that.municipiosFetched.done ->
         view.getMunicipios(that.municipios)

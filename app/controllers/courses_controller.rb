@@ -8,6 +8,11 @@ class CoursesController < ApplicationController
     respond_with Course.find(params[:id])
   end
 
+
+  def show_habilitados
+    respond_with Course.cursos_habilitados
+  end
+
   def create
     respond_with Course.create(params[:course])
   end
@@ -19,4 +24,5 @@ class CoursesController < ApplicationController
   def destroy
     respond_with CourseStatus.destroy(params[:id])
   end
+
 end

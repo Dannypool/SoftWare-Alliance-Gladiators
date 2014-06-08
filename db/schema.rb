@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140608070840) do
+ActiveRecord::Schema.define(:version => 20140608191855) do
 
   create_table "activities", :force => true do |t|
     t.integer  "venue_id"
@@ -179,6 +179,7 @@ ActiveRecord::Schema.define(:version => 20140608070840) do
     t.integer  "educational_level_id"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
+    t.string   "tipo"
   end
 
   create_table "states", :force => true do |t|

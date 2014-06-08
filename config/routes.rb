@@ -4,8 +4,11 @@ GestionFe::Application.routes.draw do
 
 
 
+
+
   scope "api" do
     match 'cursos_vigentes' => 'courses#show_habilitados'
+    resource :education_levels
     resources :training_courses
     resources :modalities
     resources :localities

@@ -1,9 +1,5 @@
 GestionFe::Application.routes.draw do
 
-
-
-
-
   scope "api" do
     match 'cursos_habilitados' => 'courses#show_habilitados'
     resources :training_courses

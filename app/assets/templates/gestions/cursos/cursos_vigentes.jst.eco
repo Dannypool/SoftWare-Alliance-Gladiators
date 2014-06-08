@@ -13,9 +13,15 @@
                 <div id= "nuevo_curso_vigente" class="panel-collapse collapse">
                     <form class="form-horizontal" role="form">
                       <div class="form-group">
-                        <label class="col-sm-2 control-label">Nombre</label>
+                        <label class="col-sm-2 control-label">Curso:</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="nombre_curso">
+                          <select class="form-control select-cursos">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                          </select>
                         </div>
                       </div>
                       <div class="form-group">
@@ -27,7 +33,7 @@
                       <div class="form-group">
                         <label class="col-sm-2 control-label" >Municipio</label>
                         <div class="col-sm-2">
-                          <select class="form-control">
+                          <select class="form-control select-municipios">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -37,7 +43,7 @@
                         </div>
                         <label class="col-sm-1 control-label" >Tipo</label>
                         <div class="col-sm-2">
-                          <select class="form-control">
+                          <select class="form-control select-tipo-educacion">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -57,20 +63,21 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="col-sm-2 control-label">Fecha inicio:</label>
-                        <div class="input-group date customhourpicker col-sm-3">
-                            <input type="text" required class="form-control input-sm" id="txtHoraAudienciaTermino">
-                            <span class="input-group-addon input-sm">
-                                <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
-                        </div>
-                        <label class="col-sm-1 control-label">Fecha Fin:</label>
-                        <div class="input-group date customhourpicker col-sm-3">
-                            <input type="text" required class="form-control input-sm" id="txtHoraAudienciaTermino">
-                            <span class="input-group-addon input-sm">
-                                <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
-                        </div>
+                          <label class="col-sm-2 control-label">Fecha inicio:</label>
+                          <div class="input-group date customhourpicker col-sm-3">
+                                <input class="form-control" id="txtHoraAudienciaTermino">
+                                <span class="input-group-addon ">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                           </div>
+                           <br>
+                          <label class="col-sm-2 control-label">Fecha inicio:</label>
+                          <div class="input-group date customhourpicker col-sm-3">
+                              <input class="form-control " id="txtHoraAudienciaTermino">
+                              <span class="input-group-addon ">
+                                  <span class="glyphicon glyphicon-calendar"></span>
+                              </span>
+                          </div>
                       </div>
                       <div class="form-group">
                           <div class="col-sm-offset-2 col-sm-10">

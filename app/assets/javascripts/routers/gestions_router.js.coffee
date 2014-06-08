@@ -4,7 +4,7 @@ class GestionFe.Routers.Gestions extends Backbone.Router
     'Registro_Aspirante': 'show_registroAspirante'
     'Modificar_Aspirante': 'show_modificar_aspirante'
     'Cursos': 'showCursos'
-    'cursos_vigentes': 'showCatalogo'
+    'cursos_vigentes': 'showCursosVigentes'
 
   initialize: ->
     view = new GestionFe.Views.Menu()
@@ -55,7 +55,8 @@ class GestionFe.Routers.Gestions extends Backbone.Router
       new GestionFe.Views.Cursos(collection: cursos)
     #@catCursos.$el.show()
 
-  showCatalogo: ->
+  showCursosVigentes: ->
+    that= this
     cursosVigentes = new GestionFe.Collections.CursosVigentes()
     cursosVigentes.add [
       {
@@ -94,4 +95,11 @@ class GestionFe.Routers.Gestions extends Backbone.Router
     ]
     console.log cursosVigentes
     view = new GestionFe.Views.CursosVigentes(collection: cursosVigentes)
-
+    catTipoEducacion = new GestionFe.Collections.TiposEducacion
+    catTipoEducacionFetched = new $.Deferred()
+    catTipoEducacion.fetch success: ->
+      catTipoEducacionFetched.resolve()
+    catTipoEducacionFetched.done ->
+      view.getTipoEducacion catTipoEducacion
+    @municipiosFetched.done ->
+      view.getMunicipios(that.municipios)

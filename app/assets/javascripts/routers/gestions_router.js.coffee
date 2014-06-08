@@ -33,8 +33,16 @@ class GestionFe.Routers.Gestions extends Backbone.Router
 
     idiomas = new GestionFe.Collections.Idiomas
     tipoEducacion = new GestionFe.Collections.TiposEscuelas
+    aspirantes = new GestionFe.Collections.Aspirantes
 
-    view = new GestionFe.Views.RegistroAspirantes()
+    aspirantesFetched = new $.Deferred()
+    aspirantes.fetch success: ->
+      aspirantesFetched.resolve()
+
+    aspirantesFetched.done ->
+      view = new GestionFe.Views.RegistroAspirantes()
+
+
 
     @municipiosFetched.done ->
       view.getMunicipios(that.municipios)

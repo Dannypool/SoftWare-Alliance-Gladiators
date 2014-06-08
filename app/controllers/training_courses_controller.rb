@@ -2,7 +2,7 @@ class TrainingCoursesController < ApplicationController
   respond_to :json
 
   def index
-  respond_to TrainningCourse.all
+  respond_with TrainningCourse.all
   end
 
   def show

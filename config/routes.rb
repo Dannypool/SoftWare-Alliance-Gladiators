@@ -1,35 +1,13 @@
 GestionFe::Application.routes.draw do
 
-
-
-  get "language/index"
-
-  get "language/show"
-
-  get "language/create"
-
-  get "language/update"
-
-  get "language/destroy"
-
-  get "education_types/index"
-
-  get "education_types/show"
-
-  get "education_types/create"
-
-  get "education_types/update"
-
-  get "education_types/destroy"
-
   scope "api" do
     resources :modalities
     resources :localities
     resources :courses
-
+    resources :education_types
     resources :municipalities
-
-
+    resources :language
+    resources :course_statuses
     resources :states
   end
 

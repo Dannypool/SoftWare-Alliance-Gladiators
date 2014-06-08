@@ -1,0 +1,2 @@
+module EducationTypesHelper
+end

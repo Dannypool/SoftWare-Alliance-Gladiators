@@ -1,3 +1,3 @@
 class GestionFe.Collections.CursosVigentes extends Backbone.Collection
-  url: 'api/cursos'
+  url: 'api/training_courses'
   model: GestionFe.Models.CursoVigente

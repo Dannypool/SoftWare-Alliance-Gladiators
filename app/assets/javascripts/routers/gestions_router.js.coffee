@@ -57,49 +57,37 @@ class GestionFe.Routers.Gestions extends Backbone.Router
 
   showCursosVigentes: ->
     that= this
-    cursosVigentes = new GestionFe.Collections.CursosVigentes()
-    cursosVigentes.add [
-      {
-        id: 1
-        course_id: 1,
-        municipality_id: 1,
-        education_type_id: 1,
-        language_id: 1,
-        course_status_id: 1,
-        no_asistencias: 0,
-        fecha_inicio: "12/12/12",
-        fecha_fin: "12/12/13"
-      },
-      {
-        id: 2
-        course_id: 2,
-        municipality_id: 1,
-        education_type_id: 1,
-        language_id: 1,
-        course_status_id: 1,
-        no_asistencias: 0,
-        fecha_inicio: "12/12/12",
-        fecha_fin: "12/12/13"
-      },
-      {
-        id: 3
-        course_id: 3,
-        municipality_id: 1,
-        education_type_id: 1,
-        language_id: 1,
-        course_status_id: 1,
-        no_asistencias: 0,
-        fecha_inicio: "12/12/12",
-        fecha_fin: "12/12/13"
-      }
-    ]
-    console.log cursosVigentes
-    view = new GestionFe.Views.CursosVigentes(collection: cursosVigentes)
-    catTipoEducacion = new GestionFe.Collections.TiposEducacion
-    catTipoEducacionFetched = new $.Deferred()
-    catTipoEducacion.fetch success: ->
-      catTipoEducacionFetched.resolve()
-    catTipoEducacionFetched.done ->
-      view.getTipoEducacion catTipoEducacion
-    @municipiosFetched.done ->
-      view.getMunicipios(that.municipios)
+    cursosVigentes = new GestionFe.Collections.CursosVigentes
+    cursosVigentesFetched = new $.Deferred()
+    cursosVigentes.fetch success: ->
+      cursosVigentesFetched.resolve()
+    cursosVigentesFetched.done ->
+
+      view = new GestionFe.Views.CursosVigentes(collection: cursosVigentes)
+
+      cursos = new GestionFe.Collections.Cursos
+      cursos.cambiarUrl()
+      catTipoEducacion = new GestionFe.Collections.TiposEducacion
+      idiomas = new GestionFe.Collections.Idiomas
+
+      catTipoEducacionFetched = new $.Deferred()
+      catTipoEducacion.fetch success: ->
+        catTipoEducacionFetched.resolve()
+      catTipoEducacionFetched.done ->
+        view.getTipoEducacion catTipoEducacion
+
+      idiomasFetched = new $.Deferred()
+      idiomas.fetch success: ->
+        idiomasFetched.resolve()
+      idiomasFetched.done ->
+        view.getIdiomas idiomas
+
+      cursosFetched = new $.Deferred()
+      cursos.fetch success: ->
+        cursosFetched.resolve()
+      cursosFetched.done ->
+        view.getCursos cursos
+        view.addAll()
+
+      that.municipiosFetched.done ->
+        view.getMunicipios(that.municipios)

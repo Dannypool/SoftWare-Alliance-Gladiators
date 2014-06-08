@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140608191855) do
+ActiveRecord::Schema.define(:version => 20140608205920) do
 
   create_table "activities", :force => true do |t|
     t.integer  "venue_id"
@@ -210,6 +210,7 @@ ActiveRecord::Schema.define(:version => 20140608191855) do
     t.integer  "nivel_servicio"
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
+    t.string   "tipo_enfermedad"
   end
 
   create_table "training_figures", :force => true do |t|

@@ -1,5 +1,6 @@
 class TrainingCoursesController < ApplicationController
   respond_to :json
+
   def index
   respond_to TrainningCourse.all
   end

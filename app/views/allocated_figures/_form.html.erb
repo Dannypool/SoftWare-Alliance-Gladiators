@@ -56,15 +56,20 @@
             </div>
 
             <div class="form-group">
-                <label for="personas_aic">Persona por asignar:</label>
-                <select name="personas_aic" id="sexo_aic" class="form-control">
+              <table class="table table-hover">
+                <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Apellido Paterno</th>
+                  <th>Municipio</th>
+                  <th>Estado</th>
+                  <th>Opciones</th>
+                </tr>
+                </thead>
+                <tbody id="personas_aic">
 
-                    <% per = Person.order(:id) %>
-                    <% per.each do |pr| %>
-
-                      <option><%= pr.a_paterno %></option>
-                    <% end %>
-                 </select>
+                </tbody>
+              </table>
 
              </div>
 
@@ -72,7 +77,7 @@
 
         </div>
     </div>
-    <button type="submit" id="enviar">Enviar Personas</button>
+
 <% end %>
 
 
@@ -93,21 +98,23 @@
                 $.each(vals, function (i, item) {
                     html = "<option value='" + item.id + "'>" + item.municipio + "</option>"
                     $('#municipio_aic').append(html)
-                    console.log(html);
                 });
 
 
             })
 
+            $('#personas_aic').empty()
             $.getJSON("http://localhost:3000/api/consulta_personas_asignadas/" + idEstado, function (data) {
 
 
                 var vals = [];
                 $.each(data, function (i, item) {
-                    console.log(item);
+                    html = "<tr><td>"+item.id+"</td><td>"+item.a_paterno+"</td><td>"+item.localidad+"</td><td>"+item.estado+"</td>"+"<td><input type='button' class='asignar' id='"+item.id+"' value='Enviar Personas'/></td>"+"</tr>"
+                    $('#personas_aic').append(html)
                 });
 
             })
+
 
         });
 
@@ -132,6 +139,9 @@
 
         });
 
+        $(".asignar").click(function(){
+            console.log("hola")
+        });
     });
 
 

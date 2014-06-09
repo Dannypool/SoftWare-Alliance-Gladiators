@@ -9,6 +9,7 @@ GestionFe::Application.routes.draw do
 
 
   scope "api" do
+    match 'consulta_personas_asignadas/:id' => 'people#show_people_from_state'
     match 'consulta_localidades/:id' => 'localities#show_many_municipalities'
     match 'cursos_habilitados' => 'courses#show_habilitados'
     match 'consulta_municipios/:id' => 'municipalities#show_many'

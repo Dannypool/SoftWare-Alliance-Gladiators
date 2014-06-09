@@ -112,6 +112,24 @@
                     html = "<tr><td>"+item.id+"</td><td>"+item.a_paterno+"</td><td>"+item.localidad+"</td><td>"+item.estado+"</td>"+"<td><input type='button' class='asignar' id='"+item.id+"' value='Enviar Personas'/></td>"+"</tr>"
                     $('#personas_aic').append(html)
                 });
+                $(".asignar").click(function(){
+                    var url = "http://localhost:3000/allocated_figures/";
+                    var parametros = JSON.stringify({
+                        activity_id: $('#localidad_aic').val(),
+                        person_id: this.id
+                    })
+                    console.log(parametros)
+                    $.ajax({
+                        type: "POST",
+                        url: url,
+                        data: parametros,
+                        contentTactivity_idype: 'application/json'
+                    }).then(function () {
+                        console.log ("hecho")
+                    }).fail(function (jqXHR) {
+                                alert(jqXHR.responseText);
+                    })
+                });
 
             })
 
@@ -119,7 +137,7 @@
         });
 
         $("#municipio_aic").change(function(){
-            console.log('hola')
+
             var idLocalidad = $("#municipio_aic option:selected").val();
             $('#localidad_aic').empty()
             $.getJSON("http://localhost:3000/api/consulta_localidades/"+ idLocalidad, function(data) {
@@ -139,9 +157,6 @@
 
         });
 
-        $(".asignar").click(function(){
-            console.log("hola")
-        });
     });
 
 

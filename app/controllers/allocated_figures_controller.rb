@@ -16,16 +16,18 @@ class AllocatedFiguresController < ApplicationController
   end
 
   def create
-    @alloc = AllocatedFigure.new(params[:id])
 
-    respond_to do |format|
-      if @alloc.save
-        format.html { redirect_to @alloc, notice: 'Exito' }
-        format.json { render json: @alloc, status: :created, location: @alloc }
-      else
-        format.json { render json: @alloc.errors, status: :unprocessable_entity }
-      end
-    end
+    respond_with AllocatedFigure.create(params[:educational_level])
+    #@alloc = AllocatedFigure.new(params[:id])
+
+    #respond_to do |format|
+    #if @alloc.save
+    #format.html { redirect_to @alloc, notice: 'Exito' }
+    #format.json { render json: @alloc, status: :created, location: @alloc }
+    #else
+    #format.json { render json: @alloc.errors, status: :unprocessable_entity }
+    #end
+    #end
 
   end
 

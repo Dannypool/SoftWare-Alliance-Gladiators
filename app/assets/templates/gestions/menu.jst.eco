@@ -53,7 +53,7 @@
                 <a type="button" class="btn" href="#Registro_FE">Registro</a>
               </li>
               <li>
-                <a type="button" class="btn" href="#Modificar_FE">Modificar</a>
+                <a type="button" class="btn" href="#Padron">Padron</a>
               </li>
             </ul>
           </div>

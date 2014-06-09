@@ -5,6 +5,7 @@ class GestionFe.Routers.Gestions extends Backbone.Router
     'Modificar_Aspirante': 'show_modificar_aspirante'
     'Cursos': 'showCursos'
     'cursos_vigentes': 'showCursosVigentes'
+    'Padron': 'showPadron'
 
   initialize: ->
     view = new GestionFe.Views.Menu()
@@ -108,3 +109,11 @@ class GestionFe.Routers.Gestions extends Backbone.Router
 
       that.municipiosFetched.done ->
         view.getMunicipios(that.municipios)
+
+  showPadron: ->
+    padron = new GestionFe.Collections.Padron
+    padronFetched = new $.Deferred()
+    padron.fetch success: ->
+      padronFetched.resolve()
+    padronFetched.done ->
+      new GestionFe.Views.Padron(collection: padron)

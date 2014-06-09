@@ -1,6 +1,9 @@
 GestionFe::Application.routes.draw do
 
+
+
   resources :activities
+  resources :allocated_figures
 
 
   scope "api" do

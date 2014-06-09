@@ -4,6 +4,7 @@ class Person < ActiveRecord::Base
   has_many :allocated_figures
   has_many :role_statuses
   has_many :educations
+  has_many :activities, :through => :allocated_figures
   belongs_to :language
   has_one :survey
 

@@ -6,4 +6,5 @@ class AllocatedFigure < ActiveRecord::Base
   has_many :training_figures
   has_many :attendances
 
+
 end

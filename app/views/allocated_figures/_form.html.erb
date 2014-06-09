@@ -1,0 +1,31 @@
+<%= form_for(@lloc) do |f| %>
+    <% if @item.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+          <ul>
+            <% @alloc.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <% @current_actividades = Activity.all %>
+      <%= f.label "Numero de necesidades de la actividad" %><br />
+
+      <%= f.select :activity_id, @current_actividades.collect{ |e| [e.necesidad, e.id] }%>
+    </div>
+
+    <div class="field">
+      <%= f.label "Persona por asignar" %><br />
+      <%= f.collection_select :person_id, People.Order(:id), :id, :nombre %>
+    </div>
+
+
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

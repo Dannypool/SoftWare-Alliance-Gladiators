@@ -1,0 +1,2 @@
+module AllocatedFiguresHelper
+end

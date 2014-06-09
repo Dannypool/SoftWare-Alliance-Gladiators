@@ -3,6 +3,9 @@ class StatesController < ApplicationController
 
   def index
     respond_with State.all
+    #@data = State.all
+    #render :json => {:estado => @data}
+
   end
 
   def show

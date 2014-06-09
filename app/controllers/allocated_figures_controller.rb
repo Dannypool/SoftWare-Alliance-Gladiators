@@ -1,4 +1,7 @@
 class AllocatedFiguresController < ApplicationController
+
+  respond_to :json
+
   def index
 
     @alloc = AllocatedFigure.all
@@ -16,18 +19,17 @@ class AllocatedFiguresController < ApplicationController
   end
 
   def create
-    respond_to :json
-    respond_with AllocatedFigure.create(params[:educational_level])
-    #@alloc = AllocatedFigure.new(params[:id])
 
-    #respond_to do |format|
-    #if @alloc.save
-    #format.html { redirect_to @alloc, notice: 'Exito' }
-    #format.json { render json: @alloc, status: :created, location: @alloc }
-    #else
-    #format.json { render json: @alloc.errors, status: :unprocessable_entity }
-    #end
-    #end
+
+    @alloc = AllocatedFigure.new(params[:allocated_figure])
+    respond_to do |format|
+    if @alloc.save
+    format.html { redirect_to notice: 'Exito' }
+
+    else
+    format.json { render json: @alloc.errors, status: :unprocessable_entity }
+    end
+    end
 
   end
 

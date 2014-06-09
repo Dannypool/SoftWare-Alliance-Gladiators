@@ -9,6 +9,14 @@ class LocalitiesController < ApplicationController
     respond_with Locality.find(params[:id])
   end
 
+  def show_many_municipalities
+
+    #respond_with Municipality.where("id = ?", params[:id])
+    @data = Locality.where("municipality_id = ?", params[:id]).select([:id, :localidad])
+    render :json => {:localities => @data}
+
+  end
+
   def create
     respond_with Locality.create(params[:curso])
   end

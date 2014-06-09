@@ -34,28 +34,36 @@ class GestionFe.Routers.Gestions extends Backbone.Router
 
     idiomas = new GestionFe.Collections.Idiomas
     tipoEducacion = new GestionFe.Collections.TiposEscuelas
+    aspirantes = new GestionFe.Collections.Aspirantes
 
     view = new GestionFe.Views.RegistroAspirantes()
 
-    @municipiosFetched.done ->
-      view.getMunicipios(that.municipios)
-    @estadosFetched.done ->
-      view.getEstados(that.estados)
-    @localidadesFetched.done ->
-      view.getLocalidades(that.localidades)
-      that.contenido.html(view.$el)
 
-    tipoEducacionFetched = new $.Deferred()
-    tipoEducacion.fetch success: ->
-      tipoEducacionFetched.resolve()
-    tipoEducacionFetched.done ->
-      view.getTipoEducacion tipoEducacion
+    aspirantesFetched = new $.Deferred()
+    aspirantes.fetch success: ->
+      aspirantesFetched.resolve()
+    aspirantesFetched.done ->
+      view = new GestionFe.Views.RegistroAspirantes(collection: aspirantes)
 
-    idiomasFetched = new $.Deferred()
-    idiomas.fetch success: ->
-      idiomasFetched.resolve()
-    idiomasFetched.done ->
-      view.getIdiomas idiomas
+      that.municipiosFetched.done ->
+        view.getMunicipios(that.municipios)
+      that.estadosFetched.done ->
+        view.getEstados(that.estados)
+      that.localidadesFetched.done ->
+        view.getLocalidades(that.localidades)
+        that.contenido.html(view.$el)
+
+      tipoEducacionFetched = new $.Deferred()
+      tipoEducacion.fetch success: ->
+        tipoEducacionFetched.resolve()
+      tipoEducacionFetched.done ->
+        view.getTipoEducacion tipoEducacion
+
+      idiomasFetched = new $.Deferred()
+      idiomas.fetch success: ->
+        idiomasFetched.resolve()
+      idiomasFetched.done ->
+        view.getIdiomas idiomas
 
 
 

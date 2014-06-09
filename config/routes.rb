@@ -8,6 +8,7 @@ GestionFe::Application.routes.draw do
 
   scope "api" do
     match 'cursos_habilitados' => 'courses#show_habilitados'
+    match 'consulta_municipios/:id' => 'municipalities#show_many'
     resources :people
     resources :training_courses
     resources :modalities

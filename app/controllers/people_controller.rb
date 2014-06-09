@@ -9,7 +9,12 @@ class PeopleController < ApplicationController
   end
 
   def create
-    respond_with Person.create(params[:person])
+
+    @persona = Person.new()
+    @persona.addresses.build
+    @persona.save((params[:person]))
+
+    respond_with @persona
   end
 
   def update

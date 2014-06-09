@@ -1,7 +1,7 @@
-<%= form_for(@lloc) do |f| %>
-    <% if @item.errors.any? %>
+<%= form_for(@alloc) do |f| %>
+    <% if @alloc.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+          <h2><%= pluralize(@alloc.errors.count, "error") %> prohibited this item from being saved:</h2>
 
           <ul>
             <% @alloc.errors.full_messages.each do |msg| %>
@@ -11,21 +11,101 @@
         </div>
     <% end %>
 
-    <div class="field">
-      <% @current_actividades = Activity.all %>
-      <%= f.label "Numero de necesidades de la actividad" %><br />
 
-      <%= f.select :activity_id, @current_actividades.collect{ |e| [e.necesidad, e.id] }%>
+    <div class="row">
+        <div class="col-xs-12 col-sm-2 col-md-2">
+        <div class="form-group">
+      <label for="estado_aic">Estado de la república:</label>
+      <select name="estado_aic" id="estado_aic" class="form-control">
+
+       <% sta = State.order(:estado) %>
+       <% sta.each do |st| %>
+        <option><%=st.estado%></option>
+      <% end %>
+      </select>
+
+        </div>
+
+
+    <div class="form-group">
+      <label for="municipio_aic">Municipio:</label>
+      <select name="municipio_aic" id="municipio_aic" class="form-control">
+
+
+      </select>
+
+            </div>
+
+
+      <div class="form-group">
+        <label for="necesidades-aic">Necesidades del municipio por sede:</label>
+        <select name="necesidades-aic" id="necesidades-aic" class="form-control">
+
+          <% act = Activity.order(:venue_locality_id) %>
+          <% act.each do |vl| %>
+              <option><%=vl.necesidad%></option>
+          <% end %>
+        </select>
+
+      </div>
+
+          <div class="form-group">
+            <label for="personas_aic">Persona por asignar:</label>
+            <select name="personas_aic" id="sexo_aic" class="form-control">
+
+              <% per = Person.order(:id) %>
+              <% per.each do |pr| %>
+
+                  <option><%= pr.a_paterno %></option>
+              <% end %>
+            </select>
+
+          </div>
+
+
+
     </div>
-
-    <div class="field">
-      <%= f.label "Persona por asignar" %><br />
-      <%= f.collection_select :person_id, People.Order(:id), :id, :nombre %>
     </div>
-
-
-
     <div class="actions">
       <%= f.submit %>
     </div>
 <% end %>
+
+
+<script>
+
+    $("#estado-aic").change(function() {
+
+        var $dropdown = $(this);
+
+        $.getJSON("api/consulta_municipios/"+ $("#estado-aic").val(), function(data) {
+
+            var key = $dropdown.val();
+            var vals = [];
+            for (i in data)
+            {
+                document.write(data[i].municipio + "<br />");
+            }
+
+            switch(key) {
+                case 1:
+                    vals = data.beverages.split(",");
+                    break;
+                case 2:
+                    vals = data.snacks.split(",");
+                    break;
+                case 'base':
+                    vals = ['Please choose from above'];
+            }
+
+            var $secondChoice = $("#second-choice");
+            $secondChoice.empty();
+            $.each(vals, function(index, value) {
+                $secondChoice("<option>" + value + "</option>");
+            });
+
+        });
+    });
+
+</script>
+

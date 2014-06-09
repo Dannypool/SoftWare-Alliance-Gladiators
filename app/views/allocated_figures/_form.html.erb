@@ -14,98 +14,128 @@
 
     <div class="row">
         <div class="col-xs-12 col-sm-2 col-md-2">
-        <div class="form-group">
-      <label for="estado_aic">Estado de la república:</label>
-      <select name="estado_aic" id="estado_aic" class="form-control">
-
-       <% sta = State.order(:estado) %>
-       <% sta.each do |st| %>
-        <option><%=st.estado%></option>
-      <% end %>
-      </select>
-
-        </div>
+            <div class="form-group">
+                <label for="estado_aic">Estado de la república:</label>
+                <select name="estado_aic" id="estado_aic" class="form-control">
+                    <% sta = State.order(:estado) %>
+                    <% sta.each do |st| %>
+                        <option value="<%=st.id%>"><%=st.estado%></option>
+                    <% end %>
+                </select>
+            </div>
 
 
-    <div class="form-group">
-      <label for="municipio_aic">Municipio:</label>
-      <select name="municipio_aic" id="municipio_aic" class="form-control">
+            <div class="form-group">
+                <label for="municipio_aic">Municipio:</label>
+                <select name="municipio_aic" id="municipio_aic" class="form-control">
 
 
-      </select>
+                </select>
+
+            </div>
+            <div class="form-group">
+                <label for="localidad_aic">Municipio:</label>
+                <select name="localidad_aic" id="localidad_aic" class="form-control">
+
+
+                </select>
 
             </div>
 
 
-      <div class="form-group">
-        <label for="necesidades-aic">Necesidades del municipio por sede:</label>
-        <select name="necesidades-aic" id="necesidades-aic" class="form-control">
+            <div class="form-group">
+                <label for="necesidades-aic">Necesidades del municipio por sede:</label>
+                <select name="necesidades-aic" id="necesidades-aic" class="form-control">
 
-          <% act = Activity.order(:venue_locality_id) %>
-          <% act.each do |vl| %>
-              <option><%=vl.necesidad%></option>
-          <% end %>
-        </select>
+                    <% act = Activity.order(:venue_locality_id) %>
+                    <% act.each do |vl| %>
+                        <option><%=vl.necesidad%></option>
+                    <% end %>
+                </select>
 
-      </div>
+            </div>
 
-          <div class="form-group">
-            <label for="personas_aic">Persona por asignar:</label>
-            <select name="personas_aic" id="sexo_aic" class="form-control">
+            <div class="form-group">
+                <label for="personas_aic">Persona por asignar:</label>
+                <select name="personas_aic" id="sexo_aic" class="form-control">
 
-              <% per = Person.order(:id) %>
-              <% per.each do |pr| %>
+                    <% per = Person.order(:id) %>
+                    <% per.each do |pr| %>
 
-                  <option><%= pr.a_paterno %></option>
-              <% end %>
-            </select>
+                      <option><%= pr.a_paterno %></option>
+                    <% end %>
+                 </select>
 
-          </div>
+             </div>
 
 
 
+        </div>
     </div>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+    <button type="submit" id="enviar">Enviar Personas</button>
 <% end %>
 
 
 <script>
 
-    $("#estado-aic").change(function() {
 
-        var $dropdown = $(this);
+    $(document).ready(function() {
+        $("#estado_aic").change(function () {
+            var idEstado = $("#estado_aic option:selected").val();
+            $('#municipio_aic').empty()
+            $.getJSON("http://localhost:3000/api/consulta_municipios/" + idEstado, function (data) {
 
-        $.getJSON("api/consulta_municipios/"+ $("#estado-aic").val(), function(data) {
 
-            var key = $dropdown.val();
-            var vals = [];
-            for (i in data)
-            {
-                document.write(data[i].municipio + "<br />");
-            }
+                var vals = [];
+                $.each(data, function (i, item) {
+                    vals = item;
+                });
+                $.each(vals, function (i, item) {
+                    html = "<option value='" + item.id + "'>" + item.municipio + "</option>"
+                    $('#municipio_aic').append(html)
+                    console.log(html);
+                });
 
-            switch(key) {
-                case 1:
-                    vals = data.beverages.split(",");
-                    break;
-                case 2:
-                    vals = data.snacks.split(",");
-                    break;
-                case 'base':
-                    vals = ['Please choose from above'];
-            }
 
-            var $secondChoice = $("#second-choice");
-            $secondChoice.empty();
-            $.each(vals, function(index, value) {
-                $secondChoice("<option>" + value + "</option>");
-            });
+            })
+
+            $.getJSON("http://localhost:3000/api/consulta_personas_asignadas/" + idEstado, function (data) {
+
+
+                var vals = [];
+                $.each(data, function (i, item) {
+                    console.log(item);
+                });
+
+            })
 
         });
+
+        $("#municipio_aic").change(function(){
+            console.log('hola')
+            var idLocalidad = $("#municipio_aic option:selected").val();
+            $('#localidad_aic').empty()
+            $.getJSON("http://localhost:3000/api/consulta_localidades/"+ idLocalidad, function(data) {
+
+
+                var vals = [];
+                $.each(data, function(i, item) {
+                    vals =item;
+                });
+                $.each(vals, function(i, item) {
+                    html = "<option value='"+item.id+"'>"+ item.localidad +"</option>"
+                    $('#localidad_aic').append(html)
+                });
+
+
+            })
+
+        });
+
     });
+
+
+
 
 </script>
 

@@ -1,6 +1,6 @@
 class AllocatedFiguresController < ApplicationController
 
-  respond_to :json
+  respond_to :js, :json
 
   def index
 
@@ -19,7 +19,6 @@ class AllocatedFiguresController < ApplicationController
   end
 
   def create
-
 
     @alloc = AllocatedFigure.new(params[:allocated_figure])
     respond_to do |format|

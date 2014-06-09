@@ -114,16 +114,16 @@
                 });
                 $(".asignar").click(function(){
                     var url = "http://localhost:3000/allocated_figures/";
-                    var parametros = JSON.stringify({
-                        activity_id: $('#localidad_aic').val(),
-                        person_id: this.id
-                    })
-                    console.log(parametros)
+                    var params = JSON.stringify({
+                        activity_id:$('#localidad_aic').val(),
+                        person_id:this.id
+                    });
+                    console.log(params)
                     $.ajax({
                         type: "POST",
                         url: url,
-                        data: parametros,
-                        contentTactivity_idype: 'application/json'
+                        data: params,
+                        contentType: 'application/json'
                     }).then(function () {
                         console.log ("hecho")
                     }).fail(function (jqXHR) {

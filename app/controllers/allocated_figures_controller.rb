@@ -16,7 +16,7 @@ class AllocatedFiguresController < ApplicationController
   end
 
   def create
-
+    respond_to :json
     respond_with AllocatedFigure.create(params[:educational_level])
     #@alloc = AllocatedFigure.new(params[:id])
 

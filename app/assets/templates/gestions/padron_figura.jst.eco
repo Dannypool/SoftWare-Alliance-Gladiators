@@ -1,0 +1,20 @@
+<tr>
+    <td>
+        <%= @figura.nombre %>
+    </td>
+    <td>
+        <%= @figura.a_paterno %>
+    </td>
+    <td>
+       <%= @figura.a_materno %>
+    </td>
+    <td>
+       <%= @figura.sexo %>
+    </td>
+    <td>
+       <%= @figura.fecha_nac %>
+    </td>
+    <td>
+       <%= @figura.nombreLengua %>
+    </td>
+</tr>

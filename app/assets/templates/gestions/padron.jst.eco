@@ -35,6 +35,8 @@
 
                     </tr>
                   </thead>
+                  <tbody id="figuras">
+                  </tbody>
 
                 </table>
               </div>

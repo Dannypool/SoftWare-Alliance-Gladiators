@@ -116,4 +116,10 @@ class GestionFe.Routers.Gestions extends Backbone.Router
     padron.fetch success: ->
       padronFetched.resolve()
     padronFetched.done ->
-      new GestionFe.Views.Padron(collection: padron)
+      view =new GestionFe.Views.Padron(collection: padron)
+
+      idiomasFetched = new $.Deferred()
+      idiomas.fetch success: ->
+        idiomasFetched.resolve()
+      idiomasFetched.done ->
+        view.getIdiomas idiomas

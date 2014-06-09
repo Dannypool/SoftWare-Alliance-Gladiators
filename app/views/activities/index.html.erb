@@ -1,0 +1,40 @@
+
+<div class="container-fluid">
+  <div class="row post_row">
+    <div class="col-md-8">
+
+      <h1>Listado de Actividades</h1>
+
+      <table class="table table-striped">
+        <tr>
+          <th>Id de Actividad</th>
+          <th>Sede</th>
+          <th>Municipio</th>
+          <th>Nivel educativo</th>
+          <th>Lengua</th>
+          <th>Necesidad</th>
+
+
+
+        </tr>
+
+        <% @activities.each do |item| %>
+            <% localidad = Locality.where("id = ?", item.venue_locality_id) %>
+            <tr>
+              <td><%= item.venue_id %></td>
+              <td><%= localidad.map(&:localidad).join("") %></td>
+              <td><%= Municipality.where("id = ?", localidad.map(&:municipality_id).join("")).map(&:municipio).join("")%></td>
+              <td><%= EducationType.where("id = ?", item.education_type).map(&:nombre).join("") %></td>
+              <td><%= Language.where("id = ?", item.language_id).map(&:nombre).join("") %></td>
+              <td><%= item.necesidad %></td>
+
+
+            </tr>
+        <% end %>
+      </table>
+
+      <br />
+
+    </div>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 GestionFe::Application.routes.draw do
 
+  resources :activities
 
 
   scope "api" do

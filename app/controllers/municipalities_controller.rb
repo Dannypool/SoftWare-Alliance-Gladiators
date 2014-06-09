@@ -7,7 +7,7 @@ class MunicipalitiesController < ApplicationController
     #render :json => {:municipio => @data}
   end
 
-  def show_many_localities
+  def show_many
 
     #respond_with Municipality.where("id = ?", params[:id])
     @data = Municipality.where("state_id = ?", params[:id]).select([:id, :municipio, :state_id])

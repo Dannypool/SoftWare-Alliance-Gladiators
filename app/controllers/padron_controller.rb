@@ -2,7 +2,6 @@ class PadronController < ApplicationController
   respond_to :html,:json
 
     def index
-
       sql1 = "select distinct p.id, p.a_paterno, p.a_materno, p.nombre,p.fecha_nac, p.curp, st.estado,
             mp.municipio, lc.localidad, lg.nombre as lengua,rl.description  from people as p
             inner join addresses as ad on p.id = ad.person_id
@@ -25,8 +24,9 @@ class PadronController < ApplicationController
 
 
       @objeto_pg1 = ActiveRecord::Base.connection.execute(sql1)
-      @objeto_pg2 = ActiveRecord::Base.connection.execute(sql2)
-      respond_with(@objeto_pg1, @objeto_pg2 )
+      #@objeto_pg2 = ActiveRecord::Base.connection.execute(sql2)
+      respond_with (@objeto_pg1)
+      #respond_with(@objeto_pg1, @objeto_pg2 )
       #render :json => {:objeto1 => @objeto_pg}
 
     end

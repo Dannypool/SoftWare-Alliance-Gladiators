@@ -24,7 +24,7 @@
 
         </tr>
 
-        <% @padron.each_row do |item| %>
+        <% @objeto_pg1.each_row do |item| %>
             <tr>
               <td><%= item[0] %></td>
               <td><%= item[1] %></td>
@@ -42,7 +42,7 @@
 
       <br />
 
-      <%= link_to 'Nuevo item', new_item_path %>
+   
 
     </div>
   </div>

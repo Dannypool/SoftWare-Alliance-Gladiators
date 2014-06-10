@@ -120,8 +120,9 @@
 
                         }).done(
                                 $(".asignar").click(function(){
+                                    var id_persona = this.id
                                     var params =JSON.stringify({
-                                        person_id: this.id,
+                                        person_id: id_persona,
                                         curso_id: $("#cursos_aic").val()
                                     })
                                     console.log(params)

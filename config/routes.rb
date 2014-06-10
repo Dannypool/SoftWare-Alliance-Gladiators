@@ -7,6 +7,14 @@ GestionFe::Application.routes.draw do
 
 
 
+  get "training_figures/index"
+
+  get "training_figures/create"
+
+  get "training_figures/update"
+
+  get "training_figures/destroy"
+
   resources :activities
   resources :allocated_figures
 

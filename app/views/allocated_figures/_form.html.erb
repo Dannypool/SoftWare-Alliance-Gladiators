@@ -164,7 +164,14 @@
                         estado: $("#estado_aic").val(),
                         lengua:  item.lengua_id
                     });
-                    console.log(data)
+                    $.ajax({
+                        type: 'POST',
+                        url: url,
+                        data: data,
+                        contentType: 'application/json'
+                    }).then(function (personas) {
+                      console.log(personas)
+                    })
                 });
             })
 

@@ -15,7 +15,7 @@ inner join localities as lc on lc.id = ad.locality_id
 inner join municipalities as mp on mp.id = lc.municipality_id
 inner join states as st on st.id = mp.state_id
 inner join languages as lan on  lan.id = p.language_id
-where st.id = 1 and lan.id= 1 " + params[:id]
+where st.id = "+ params[:estado] + " and lan.id=  " + params[:lengua]
 
     @objeto_pg = ActiveRecord::Base.connection.execute(sql)
     render :json => @objeto_pg

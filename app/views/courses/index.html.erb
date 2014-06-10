@@ -81,35 +81,15 @@
             })
 
             $('#cursos_aic').empty()
-            $.getJSON("http://localhost:3000/api/consulta_personas_asignadas/" + idEstado, function (data) {
-
-
-                var vals = [];
+            var idMunicipio = $("#municipio_aic")
+            $.getJSON("http://localhost:3000/api/consulta_por_municipio/" + idMunicipio, function (data) {
                 $.each(data, function (i, item) {
-                    html = "<tr><td>"+item.id+"</td><td>"+item.a_paterno+"</td><td>"+item.localidad+"</td><td>"+item.estado+"</td>"+"<td><input type='button' class='asignar' id='"+item.id+"' value='Enviar Personas'/></td>"+"</tr>"
+                    html = "<tr><td>"+item.id+"</td><td>"+item.description+"</td><td>"+item.status+"</td><td>"+item.municipio+"</td>"+"<td><input type='button' class='asignar' id='"+item.id+"' value='Enviar Cursos'/></td>"+"</tr>"
                     $('#cursos_aic').append(html)
                 });
-                $(".asignar").click(function(){
-                    var url = "http://localhost:3000/allocated_figures/";
-                    var params = JSON.stringify({
-                        activity_id:$('#localidad_aic').val(),
-                        person_id:this.id
-                    });
-                    console.log(params)
-                    $.ajax({
-                        type: "POST",
-                        url: url,
-                        data: params,
-                        contentType: 'application/json'
-                    }).then(function () {
-                        console.log ("hecho")
-                    }).fail(function (jqXHR) {
-                        alert(jqXHR.responseText);
-                    })
-                });
+
 
             })
-
 
         });
 

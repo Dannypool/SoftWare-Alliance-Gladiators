@@ -34,24 +34,32 @@
 
             </div>
             <div class="form-group">
-                <label for="localidad_aic">Municipio:</label>
+                <label for="localidad_aic">Localidad:</label>
                 <select name="localidad_aic" id="localidad_aic" class="form-control">
 
 
                 </select>
 
             </div>
-
-
             <div class="form-group">
-                <label for="necesidades-aic">Necesidades del municipio por sede:</label>
-                <select name="necesidades-aic" id="necesidades-aic" class="form-control">
+                <label for="actividades">Sede:</label>
+                <select name="actividades" id="actividades" class="form-control">
 
-                    <% act = Activity.order(:venue_locality_id) %>
-                    <% act.each do |vl| %>
-                        <option><%=vl.necesidad%></option>
-                    <% end %>
+
                 </select>
+
+            </div>
+            <div class="form-group">
+              <label for="localidad_aic">Lengua:</label>
+              <label id="lengua_actividad"></label>
+            </div>
+            <div class="form-group">
+                <label for="localidad_aic">Nivel Educativo:</label>
+                <label id="nivel_educativo"></label>
+            </div>
+            <div class="form-group">
+              <label for="necesidades-aic">Necesidades del municipio por sede:</label>
+              <label id="necesidades-aic"></label>
 
             </div>
 
@@ -103,35 +111,7 @@
 
             })
 
-            $('#personas_aic').empty()
-            $.getJSON("http://localhost:3000/api/consulta_personas_asignadas/" + idEstado, function (data) {
 
-
-                var vals = [];
-                $.each(data, function (i, item) {
-                    html = "<tr><td>"+item.id+"</td><td>"+item.a_paterno+"</td><td>"+item.localidad+"</td><td>"+item.estado+"</td>"+"<td><input type='button' class='asignar' id='"+item.id+"' value='Enviar Personas'/></td>"+"</tr>"
-                    $('#personas_aic').append(html)
-                });
-                $(".asignar").click(function(){
-                    var url = "http://localhost:3000/allocated_figures/";
-                    var params = JSON.stringify({
-                        activity_id:$('#localidad_aic').val(),
-                        person_id:this.id
-                    });
-                    console.log(params)
-                    $.ajax({
-                        type: "POST",
-                        url: url,
-                        data: params,
-                        contentType: 'application/json'
-                    }).then(function () {
-                        console.log ("hecho")
-                    }).fail(function (jqXHR) {
-                                alert(jqXHR.responseText);
-                    })
-                });
-
-            })
 
 
         });
@@ -153,6 +133,39 @@
                 });
             })
         });
+
+        $("#localidad_aic").change(function(){
+
+            var idActividad = $("#localidad_aic option:selected").val();
+            $('#actividades').empty()
+            $.getJSON("http://localhost:3000/api/consulta_de_las_actividades/"+ idActividad, function(data) {
+
+                $.each(data, function(i, item) {
+                    html = "<option value='"+item.id+"'>"+ item.localidad +"</option>"
+                    $('#actividades').append(html)
+                    $('#lengua_actividad').text(item.nombre)
+                    $('#necesidades-aic').text(item.necesidad)
+                });
+            })
+        });
+
+        $("#actividades").change(function(){
+            var idActividad = $("#actividades option:selected").val();
+
+            $.getJSON("http://localhost:3000/api/actividad_unica/"+ idActividad, function(data) {
+
+                $.each(data, function(i, item) {
+                    console.log(item)
+                    $('#lengua_actividad').text(item.lengua)
+                    $('#nivel_educativo').text(item.educacion)
+                    $('#necesidades-aic').text(item.necesidad)
+                });
+            })
+        });
+
+
+
+
     });
 </script>
 

@@ -1,13 +1,13 @@
 class CoursesController < ApplicationController
-  respond_to :json
+  respond_to :json, :html
   def index
-    respond_with Course.all
+    @cr = Course.all
+    respond_with (@cr)
   end
 
   def show
     respond_with Course.find(params[:id])
   end
-
 
   def show_habilitados
     respond_with Course.cursos_habilitados
@@ -24,5 +24,6 @@ class CoursesController < ApplicationController
   def destroy
     respond_with CourseStatus.destroy(params[:id])
   end
+
 
 end

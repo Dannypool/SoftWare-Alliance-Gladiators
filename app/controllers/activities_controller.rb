@@ -79,13 +79,13 @@ class ActivitiesController < ApplicationController
 
     #Aqui espero el id de localidad
 
-    sql = "select loc.localidad, v.localizacion, a.id, l.nombre, a.necesidad from localities as loc
-    inner join venues as v on v.locality_id =" + params[:id] +
-    "inner join activities as a on a.venue_id = v.id
-    inner join languages as l on a.language_id = l.id"
+    sql = "select loc.localidad, v.localizacion, a.id, l.nombre from localities as loc
+    inner join venues as v on v.locality_id = loc.id
+  inner join activities as a on a.venue_id = v.id
+  inner join languages as l on a.language_id = l.id where loc.id = " + params[:id]
 
     @actividad_pg = ActiveRecord::Base.connection.execute(sql)
-    render :json =>  @objeto_pg
+    render :json =>  @actividad_pg
 
   end
 

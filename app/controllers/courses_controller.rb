@@ -29,7 +29,7 @@ class CoursesController < ApplicationController
 
     sql = "select cr.id, cr.description, cr.status, mn.municipio from courses as cr
           inner join trainning_courses as tc on tc.course_id = cr.id
-          inner join municipalities as mn on tc.municipality_id = mn.id where cr.id = " + params[:id]
+          inner join municipalities as mn on tc.municipality_id = mn.id where mn.id = " + params[:id]
 
     @courses_by_municipality_pg = ActiveRecord::Base.connection.execute(sql)
     render :json =>  @courses_by_municipality_pg

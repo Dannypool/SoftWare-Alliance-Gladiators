@@ -20,7 +20,7 @@ class AllocatedFiguresController < ApplicationController
 
   def create
 
-    @alloc = AllocatedFigure.new(params[:allocated_figure])
+    @alloc = AllocatedFigure.new(params[:id])
     respond_to do |format|
     if @alloc.save
     format.html { redirect_to notice: 'Exito' }

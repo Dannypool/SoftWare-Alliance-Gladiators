@@ -1,15 +1,4 @@
 
-
-<% @cr.each do |cre| %>
-    <tr>
-
-      <td><%= cre.description %></td>
-
-
-    </tr>
-<% end %>
-
-
 <div class="row">
   <div class="col-xs-12 col-sm-2 col-md-2">
     <div class="form-group">
@@ -81,8 +70,9 @@
             })
 
             $('#cursos_aic').empty()
-            var idMunicipio = $("#municipio_aic")
-            $.getJSON("http://localhost:3000/api/consulta_por_municipio/" + idMunicipio, function (data) {
+            var idMunicipio = $("#municipio_aic option:selected").val()
+            console.log(idMunicipio)
+            $.getJSON("http://localhost:3000/api/cursos_por_municipio/" + idMunicipio, function (data) {
                 $.each(data, function (i, item) {
                     html = "<tr><td>"+item.id+"</td><td>"+item.description+"</td><td>"+item.status+"</td><td>"+item.municipio+"</td>"+"<td><input type='button' class='asignar' id='"+item.id+"' value='Enviar Cursos'/></td>"+"</tr>"
                     $('#cursos_aic').append(html)

@@ -178,10 +178,10 @@
 
                         }).done(
                                 $(".asignar").click(function(){
-                                    var params ={
+                                    var params =JSON.stringify({
                                         persona_id: this.id,
                                         actividad_id: $("#actividades").val()
-                                    }
+                                    })
                                     $.ajax({
                                         type: 'POST',
                                         url: 'http://localhost:3000/allocated_figures/',

@@ -152,15 +152,23 @@
         $("#actividades").change(function(){
             var idActividad = $("#actividades option:selected").val();
 
-            $.getJSON("http://localhost:3000/api/actividad_unica/"+ idActividad, function(data) {
 
+            $.getJSON("http://localhost:3000/api/actividad_unica/"+ idActividad, function(data) {
                 $.each(data, function(i, item) {
                     console.log(item)
                     $('#lengua_actividad').text(item.lengua)
                     $('#nivel_educativo').text(item.educacion)
                     $('#necesidades-aic').text(item.necesidad)
+
+                    var data = JSON.stringify({
+                        estado: $("#estado_aic").val(),
+                        lengua:  item.lengua_id
+                    });
+                    console.log(data)
                 });
             })
+
+
         });
 
 

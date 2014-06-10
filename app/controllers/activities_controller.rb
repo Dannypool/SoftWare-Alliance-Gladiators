@@ -94,7 +94,7 @@ inner join languages as l on a.language_id = l.id where loc.id =" + params[:id]
 
     #Aqui espero el id de localidad
 
-    sql = "select et.nombre as educacion, l.nombre as lengua, a.id , a.necesidad from activities as a
+    sql = "select et.nombre as educacion, l.nombre as lengua, a.id , a.necesidad, l.id as lengua_id from activities as a
             inner join languages as l on a.language_id = l.id
             inner join education_types as et on a.education_type_id = et.id
             where a.id = " + params[:id]

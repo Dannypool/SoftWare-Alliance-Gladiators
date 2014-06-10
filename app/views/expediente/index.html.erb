@@ -1,0 +1,74 @@
+<h1>Expediente#index</h1>
+<p>Find me in app/views/expediente/index.html.erb</p>
+<div class="row">
+  <div class="col-xs-12 col-sm-2 col-md-2">
+    <div class="form-group">
+      <label for="estado_aic">Identificador:</label>
+      <input type="text" id="fe_id"/>
+      <input type="button" value="Buscar" id="buscarAspirante"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <table>
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>A. Paterno</th>
+        <th>A. Materno</th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody id="figura">
+
+      </tbody >
+
+    </table>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-2 col-md-2">
+    <div class="form-group">
+      <table>
+        <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>A. Paterno</th>
+          <th>A. Materno</th>
+          <th>Fecha Nac</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody id="figura">
+
+        </tbody >
+
+      </table>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#buscarAspirante").click(function(){
+            $("#figura").empty()
+            id_persona = $("#fe_id").val()
+            $.getJSON("http://localhost:3000/api/consulta_personas_apellido/" + id_persona, function (data) {
+
+                $.each(data, function (i, item) {
+                    html= "<tr><td>" + item.id + "</td><td>" + item.nombre + "</td><td>" + item.a_paterno + "</td><td>" + item.a_materno + "</td><td><input type='button' value='Enviar a servicio' class='enviar' id=" + item.id + " /></td><td><input type='button' value='Ver Expediente' class='expediente' id=" + item.id + " /></td></tr>"
+                    $("#figura").html(html)
+                });
+                $(".enviar").click(function(){
+                    idFig = this.id
+                    console.log(idFig)
+                })
+
+            })
+
+        })
+    })
+</script>

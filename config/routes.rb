@@ -5,8 +5,6 @@ GestionFe::Application.routes.draw do
 
 
 
-
-
   get "training_figures/index"
 
   get "training_figures/create"
@@ -29,9 +27,9 @@ GestionFe::Application.routes.draw do
     match 'consulta_localidades/:id' => 'localities#show_many_municipalities'
     match 'cursos_habilitados' => 'courses#show_habilitados'
     match 'consulta_municipios/:id' => 'municipalities#show_many'
-
+    match 'consulta_personas_apellido/:id' => 'expediente#show_people_from_id'
     resources :role_statuses
-
+    resources :expediente
     resources :padron
     resources :people
     resources :training_courses

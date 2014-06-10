@@ -18,6 +18,7 @@ GestionFe::Application.routes.draw do
 
 
   scope "api" do
+    match 'rol_por_persona/:id' => 'people#rol_por_persona'
     match 'actividad_unica/:id' => 'activities#consulta_una_actividad'
     match 'cursos_por_municipio/:id' => 'courses#show_courses_by_municipality'
     match 'consulta_de_las_actividades/:id' => 'activities#consulta_actividades'

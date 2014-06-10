@@ -59,4 +59,12 @@ where st.id ="+ params[:estado] + " and lan.id="+ params[:lengua] + "  and af.id
   def destroy
     respond_with Person.destroy(params[:id])
   end
+
+  def rol_por_persona
+
+    sql ="select r.description,s.nombre,rs.created_at from roles as r join role_statuses as rs on r.id = rs.role_id join statuses as s on s.id = rs.status_id where rs.person_id = " + params[:id]
+    @rol_por_persona = ActiveRecord::Base.connection.execute(sql)
+    render :json => @rol_por_persona
+  end
+
 end

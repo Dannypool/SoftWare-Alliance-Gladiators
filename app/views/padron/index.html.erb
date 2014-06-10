@@ -9,33 +9,33 @@
 
       <table class="table table-striped">
         <tr>
+          <th>Id</th>
           <th>Nombre</th>
           <th>Apellido Paterno</th>
           <th>Apellido Materno</th>
+          <th>Nombre</th>
           <th>Fecha de nacimiento</th>
-          <th>Sexo</th>
+          <th>CURP</th>
           <th>Estado</th>
-          <th>Municipio</th>
           <th>Localidad</th>
-          <th>Cantidad</th>
-          <th>Sede</th>
-          <th>Lengua indigena</th>
+          <th>Lengua</th>
+          <th>Descripción</th>
+
 
         </tr>
 
-        <% @padron.each do |item| %>
+        <% @padron.each_row do |item| %>
             <tr>
-              <td><%= item.id %></td>
-              <td><%= item.nombre %></td>
-              <td><%= item.a_paterno %></td>
-              <td><%= item.a_materno %></td>
-              <td><%= item.fecha_nac %></td>
-              <td><%= item.price_your %></td>
-              <td><%= item.sexo %></td>
-              <td><%= item.sexo %></td>
+              <td><%= item[0] %></td>
+              <td><%= item[1] %></td>
+              <td><%= item[3] %></td>
+              <td><%= item[4] %></td>
+              <td><%= item[5] %></td>
+              <td><%= item[6] %></td>
+              <td><%= item[7] %></td>
+              <td><%= item[8] %></td>
+              <td><%= item[9] %></td>
 
-
-              <td><%= item.statistics.select(:item_url).map(&:item_url).join("") %></td>
             </tr>
         <% end %>
       </table>

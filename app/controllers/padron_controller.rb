@@ -11,7 +11,7 @@ class PadronController < ApplicationController
             inner join languages as lg on lg.id = p.language_id
             inner join role_statuses as rls on rls.person_id = p.id
             inner join roles as rl on rl.id =  rls.role_id
-            where rl.id = 3 and p.id = 8 limit 1"
+            where rl.id = 3 limit 1"
 
       sql2 = "select s.estado, m.municipio, l.localidad, lan.nombre from states as s
               inner join municipalities as m on m.state_id = s.id

@@ -25,5 +25,12 @@ class CoursesController < ApplicationController
     respond_with CourseStatus.destroy(params[:id])
   end
 
+  def show_courses
+
+    @data = Course.where("state_id = ?", params[:id]).select([:id, :municipio, :state_id])
+    render :json => {:municipio => @data}
+
+  end
+
 
 end

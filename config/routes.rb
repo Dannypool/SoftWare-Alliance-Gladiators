@@ -14,7 +14,7 @@ GestionFe::Application.routes.draw do
     match 'cursos_por_municipio/:id' => 'courses#show_courses_by_municipality'
     match 'consulta_de_las_actividades/:id' => 'activities#consulta_actividades'
     match 'consulta_de_padron/' => 'padron#show_people_from_padron'
-    match 'consulta_personas_asignadas/:id' => 'people#show_people_from_state'
+    match 'consulta_personas_asignadas/' => 'people#show_people_from_state'
     match 'consulta_localidades/:id' => 'localities#show_many_municipalities'
     match 'cursos_habilitados' => 'courses#show_habilitados'
     match 'consulta_municipios/:id' => 'municipalities#show_many'

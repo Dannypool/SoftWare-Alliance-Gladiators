@@ -10,6 +10,8 @@ GestionFe::Application.routes.draw do
 
 
   scope "api" do
+    match 'actividad_unica/:id' => 'activities#consulta_una_actividad'
+    match 'cursos_por_municipio/:id' => 'courses#show_courses_by_municipality'
     match 'consulta_de_las_actividades/:id' => 'activities#consulta_actividades'
     match 'consulta_de_padron/' => 'padron#show_people_from_padron'
     match 'consulta_personas_asignadas/:id' => 'people#show_people_from_state'

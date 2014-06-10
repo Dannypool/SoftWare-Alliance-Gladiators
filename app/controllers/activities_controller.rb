@@ -89,6 +89,23 @@ class ActivitiesController < ApplicationController
 
   end
 
+  def consulta_una_actividad
+
+    #Aqui espero el id de localidad
+
+    sql = "select et.nombre as educacion, l.nombre as lengua, a.id from activities as a
+            inner join languages as l on a.language_id = l.id
+            inner join education_types as et on a.education_type_id = et.id
+            where a.id = " + params[:id]
+
+    @actividad_sola_pg = ActiveRecord::Base.connection.execute(sql)
+    render :json =>  @actividad_sola_pg
+
+  end
+
+
+
+
 end
 
 

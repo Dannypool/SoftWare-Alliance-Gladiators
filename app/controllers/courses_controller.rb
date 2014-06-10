@@ -25,10 +25,14 @@ class CoursesController < ApplicationController
     respond_with CourseStatus.destroy(params[:id])
   end
 
-  def show_courses
+  def show_courses_by_municipality
 
-    @data = Course.where("state_id = ?", params[:id]).select([:id, :municipio, :state_id])
-    render :json => {:municipio => @data}
+    sql = "select cr.id, cr.description, cr.status from courses as cr
+        inner join trainning_courses as tc on
+        tc.municipality_id = cr.id where cr.id = " + params[:id]
+
+    @courses_by_municipality_pg = ActiveRecord::Base.connection.execute(sql)
+    render :json =>  @courses_by_municipality_pg
 
   end
 

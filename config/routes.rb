@@ -5,6 +5,8 @@ GestionFe::Application.routes.draw do
 
 
 
+
+
   resources :activities
   resources :allocated_figures
 
@@ -18,6 +20,7 @@ GestionFe::Application.routes.draw do
     match 'consulta_localidades/:id' => 'localities#show_many_municipalities'
     match 'cursos_habilitados' => 'courses#show_habilitados'
     match 'consulta_municipios/:id' => 'municipalities#show_many'
+    resources :role_statuses
     resources :padron
     resources :people
     resources :training_courses

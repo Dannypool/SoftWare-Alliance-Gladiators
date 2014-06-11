@@ -4,7 +4,18 @@ class RoleStatusesController < ApplicationController
   end
 
   def create
-    respond_with RoleStatus.create(params[:role_statuses])
+
+    @alloc = RoleStatus.new(params[:id])
+    respond_to do |format|
+      if @alloc.save
+        format.html { redirect_to notice: 'Exito' }
+
+      else
+        format.json { render json: @alloc.errors, status: :unprocessable_entity }
+      end
+    end
+
+    #respond_with RoleStatus.create(params[:role_statuses])
   end
 
   def show

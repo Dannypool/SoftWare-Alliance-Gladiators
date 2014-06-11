@@ -1,4 +1,5 @@
 class RoleStatusesController < ApplicationController
+  respond_to :json
   def index
   end
 

@@ -1,4 +1,4 @@
-<h1>Padrón de aspirantes</h1>
+<h1>Padrón de figuras educativas</h1>
 
 
 <div class="container-fluid">
@@ -20,6 +20,11 @@
           <th>Localidad</th>
           <th>Lengua</th>
           <th>Tipo figura</th>
+          <th>Estado de la sede</th>
+          <th>Municipio de la sede</th>
+          <th>Localidad de la sede</th>
+          <th>Lengua en la que se dio clases</th>
+
         </tr>
         <% @objeto_pg1.each_row do |item| %>
             <tr>
@@ -34,8 +39,15 @@
               <td><%= item[8] %></td>
               <td><%= item[9] %></td>
               <td><%= item[10] %></td>
-            </tr>
         <% end %>
+        <% @objeto_pg2.each_row do |item2| %>
+                <td><%= item2[0] %></td>
+                <td><%= item2[1] %></td>
+                <td><%= item2[2] %></td>
+                <td><%= item2[3] %></td>
+        <% end %>
+            </tr>
+
       </table>
 
       <br />

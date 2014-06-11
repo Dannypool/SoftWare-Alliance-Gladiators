@@ -1,5 +1,4 @@
-<h1>Expediente#index</h1>
-<p>Find me in app/views/expediente/index.html.erb</p>
+<h1>Expediente</h1>
 <div class="row">
   <div class="col-xs-12 col-sm-2 col-md-2">
     <div class="form-group">
@@ -36,13 +35,43 @@
         <thead>
         <tr>
           <th>Nombre</th>
-          <th>A. Paterno</th>
-          <th>A. Materno</th>
           <th>Fecha Nac</th>
-          <th></th>
+          <th>Sexo</th>
+          <th>CURP</th>
+          <th>RFC</th>
+          <th>Lugar de nacimiento</th>
+          <th>Telefono</th>
         </tr>
         </thead>
-        <tbody id="figura">
+        <tbody id="datosGen">
+
+        </tbody >
+
+      </table>
+
+      <table>
+        <thead>
+        <tr>
+          <th>Tipo_zona</th>
+          <th>Calzado</th>
+          <th>Talla Playera</th>
+          <th>Talla Pans</th>
+        </tr>
+        </thead>
+        <tbody id="datosGen2">
+
+        </tbody >
+
+      </table>
+
+      <table>
+        <thead>
+        <tr>
+          <th>Tipo de figura</th>
+          <th>Fecha de actualizacion</th>
+        </tr>
+        </thead>
+        <tbody id="roles">
 
         </tbody >
 
@@ -65,6 +94,23 @@
                 $(".enviar").click(function(){
                     idFig = this.id
                     console.log(idFig)
+                })
+                $(".expediente").click(function(){
+                    idFig = this.id
+                    $.getJSON("http://localhost:3000/api/consulta_personas_apellido/" + idFig, function (data) {
+                        $.each(data, function (i, item) {
+                            html= "<tr><td>" + item.nombre + " "+item.a_paterno+" "+item.a_materno+"</td><td>" + item.fecha_nac + "</td><td>" + item.sexo + "</td><td>" + item.curp + "</td><td>" + item.rfc + "</td><td>" + item.lugar_nac + "</td><td>" + item.telefono + "</td></tr>"
+                            $("#datosGen").html(html)
+                            html2= "<tr><td>" + item.tipo_zona + "</td><td>" + item.calzado + "</td><td>" + item.talla_playera + "</td><td>" + item.talla_pants + "</td></tr>"
+                            $("#datosGen2").html(html2)
+                        });
+                    })
+                    $.getJSON("http://localhost:3000/api/rol_por_persona/" + idFig, function (data) {
+                        $.each(data, function (i, item) {
+                            html= "<tr><td>" + item.description + "</td><td>" + item.created_at + "</td>></tr>"
+                            $("#roles").append(html)
+                        });
+                    })
                 })
 
             })

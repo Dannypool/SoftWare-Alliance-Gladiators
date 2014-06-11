@@ -36,7 +36,7 @@
           <div class="collapse" id="navFormacion">
             <ul>
               <li>
-                <a type="button" class="btn" href="#Registro_Formacion">Registro</a>
+                <a type="button" class="btn" href="http://localhost:3000/allocated_figures/new">Asignacion de Figuras</a>
               </li>
               <li>
                 <a type="button" class="btn" href="#Modificar_Formacion">Modificar</a>
@@ -50,10 +50,10 @@
           <div class="collapse" id="navFiguras">
             <ul>
               <li>
-                <a type="button" class="btn" href="#Registro_FE">Registro</a>
+                <a type="button" class="btn" href="http://localhost:3000/api/padron">Padron</a>
               </li>
               <li>
-                <a type="button" class="btn" href="#Padron">Padron</a>
+                <a type="button" class="btn" href="http://localhost:3000/api/expediente">Expediente</a>
               </li>
             </ul>
           </div>

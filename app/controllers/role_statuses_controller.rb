@@ -4,7 +4,7 @@ class RoleStatusesController < ApplicationController
   end
 
   def create
-    respond_with RoleStatus.create(params[:id])
+    respond_with RoleStatus.create(params[:role_statuses])
   end
 
   def show

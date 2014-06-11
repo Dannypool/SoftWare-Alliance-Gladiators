@@ -28,7 +28,8 @@ class TrainingCoursesController < ApplicationController
               join languages as lg on lg.id = tc.language_id where tc.course_status_id = 1 and tc.municipality_id = " + params[:id]
 
     @objeto_pg1 = ActiveRecord::Base.connection.execute(sql)
-    respond_with (@objeto_pg1)
+    render :json => {:objeto1 => @objeto_pg1}
+    #respond_with (@objeto_pg1)
 
 
   end
